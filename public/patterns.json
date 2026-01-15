@@ -1,0 +1,163 @@
+[
+   {
+      "slug":"arrays-hashing",
+      "name":"Arrays & Hashing",
+      "description":"Problems based on arrays, hash maps, and counting techniques",
+      "subpatterns":[
+         {
+            "slug": "array-fundamentals",
+            "name": "Fundamentals",
+            "description": "Basic operations and traversal patterns on arrays, including iteration, indexing, and simple element comparisons"
+         },
+         {
+            "slug": "frequency-map",
+            "name": "Frequency Map",
+            "description": "Counting occurrences of elements or characters to solve problems involving duplicates, anagrams, or distributions"
+         },
+         {
+            "slug":"prefix-sum-product",
+            "name":"Prefix Sum / Product",
+            "description": "Precomputing cumulative sums or products to answer range queries or optimize subarray calculations in O(1)"
+         },
+         {
+            "slug": "last-seen-index",
+            "name": "Last Seen Index / Position Tracking",
+            "description": "Tracking last occurrence index to reason about distance, order, or uniqueness"
+         }
+      ]
+   },
+   {
+      "slug": "two-pointers",
+      "name": "Two Pointers",
+      "description": "Problems solved by maintaining two indices that move monotonically to traverse data efficiently",
+      "subpatterns": [
+         {
+            "slug": "opposite-ends",
+            "name": "Opposite Ends",
+            "description": "Two pointers start from both ends and move toward each other; used for pair searching, palindrome checks, in-place reverse, and greedy pairing"
+         },
+         {
+            "slug": "same-direction",
+            "name": "Same Direction",
+            "description": "Both pointers move forward; often a slow/fast pointer setup for deduplication, filtering, partitioning, or window-like optimizations"
+         },
+         {
+            "slug": "merge-two-arrays",
+            "name": "Merging / Two Arrays Traversal",
+            "description": "Two pointers iterate over two arrays to merge, combine, or compute relations; used in merge, intersection, union, or pair-sum problems"
+         }
+      ]
+   },
+   {
+      "slug": "sliding-window",
+      "name": "Sliding Window",
+      "description": "Window-based problems with fixed or variable size",
+      "subpatterns": [
+         {
+            "slug": "fixed-size-window",
+            "name": "Fixed Size Window",
+            "description": "Problems where the window length is constant; compute sums, counts, or max/min within the window"
+         },
+         {
+            "slug": "variable-size-window",
+            "name": "Variable Size Window",
+            "description": "Problems with dynamic window length; adjust window based on constraints like at most/at least/exactly"
+         }
+      ]
+   },
+   {
+      "slug": "stack",
+      "name": "Stack",
+      "description": "LIFO data structure problems; used for sequential processing, undo-like logic, expression evaluation, and optimization",
+      "subpatterns": [
+         {
+            "slug": "stack-fundamentals",
+            "name": "Fundamentals",
+            "description": "Sequential processing of elements; last-in, first-out logic; undo-like operations"
+         },
+         {
+            "slug": "monotonic-stack",
+            "name": "Monotonic Stack",
+            "description": "Maintains strictly increasing or decreasing order; used for next greater/smaller element or range queries"
+         },
+         {
+            "slug": "expression-evaluation",
+            "name": "Expression Evaluation",
+            "description": "Parsing and evaluating expressions using a stack; includes postfix/prefix notation, infix calculators, operator precedence, and intermediate results"
+         }
+      ]
+   },
+   {
+      "slug": "tree",
+      "name": "Tree",
+      "description": "Problems involving binary or n-ary trees, including traversal, path computation, and subtree calculations",
+      "subpatterns": [
+         {
+            "slug": "tree-bfs",
+            "name": "BFS Level-Order",
+            "description": "Traverse tree level by level, useful for width, min depth, right side view, or zigzag order"
+         },
+         {
+            "slug": "tree-dfs-bottom-up",
+            "name": "DFS Bottom-Up",
+            "description": "Compute values from children to parent"
+         },
+         {
+            "slug": "tree-dfs-top-down",
+            "name": "DFS Top-Down",
+            "description": "Pass state from parent to children to solve path or accumulation problems"
+         },
+         {
+            "slug": "tree-dfs-backtracking",
+            "name": "DFS Backtracking (Paths)",
+            "description": "Maintain a mutable path while traversing to generate all paths or combinations"
+         }
+      ]
+   },
+   {
+      "slug": "graph",
+      "name": "Graph",
+      "description": "Problems involving vertices and edges, including traversal, connectivity, shortest paths, and graph algorithms",
+      "subpatterns": [
+         {
+            "slug": "graph-bfs",
+            "name": "BFS",
+            "description": "Level-order traversal for shortest paths, reachability, or propagation effects"
+         },
+         {
+            "slug": "graph-dfs",
+            "name": "DFS",
+            "description": "Recursive or stack-based traversal for exploring connected components, paths, or detecting cycles"
+         },
+         {
+            "slug": "union-find",
+            "name": "Union-Find / Disjoint Set",
+            "description": "Tracking connected components or detecting cycles efficiently using a disjoint set structure. Example: 'Redundant Connection', 'Number of Connected Components in an Undirected Graph'"
+         }
+      ]
+   },
+   {
+      "slug": "greedy",
+      "name": "Greedy",
+      "description": "Problems where a local optimal choice at each step leads to a global optimum",
+      "subpatterns": [
+         {
+            "slug": "local-optimal-choice",
+            "name": "Local Optimal Choice",
+            "description": "Choose the best option at each step based on local conditions, without revisiting previous decisions"
+         }
+      ]
+   },
+   {
+      "slug": "design",
+      "name": "Design",
+      "description": "Problems that require designing classes, APIs, or data structures with specific operations and constraints",
+      "subpatterns": [
+         {
+            "slug": "classic-ds-design",
+            "name": "Classic Data Structure Design",
+            "description": "Design basic data structures with standard operations like insert, delete, search; often used to test knowledge of stacks, queues, hashmaps, heaps, and arrays"
+         }
+      ]
+   }
+]
