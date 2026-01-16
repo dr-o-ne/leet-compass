@@ -117,6 +117,15 @@
       ]
    },
    {
+      "id":136,
+      "difficulty":"Easy",
+      "name":"Single Number",
+      "slug":"single-number",
+      "patterns":[
+         "bit-manipulation"
+      ]
+   },
+   {
       "id":150,
       "difficulty":"Medium",
       "name":"Evaluate Reverse Polish Notation",
@@ -411,6 +420,15 @@
       "patterns":[
          "graph-dfs",
          "graph-bfs"
+      ]
+   },
+   {
+      "id":901,
+      "difficulty":"Medium",
+      "name":"Online Stock Span",
+      "slug":"online-stock-span",
+      "patterns":[
+         "monotonic-stack"
       ]
    },
    {

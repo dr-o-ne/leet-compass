@@ -159,5 +159,18 @@
             "description": "Design basic data structures with standard operations like insert, delete, search; often used to test knowledge of stacks, queues, hashmaps, heaps, and arrays"
          }
       ]
+   },
+   {
+      "slug": "math",
+      "name": "Math",
+      "description": "Problems involving number theory, arithmetic, and bitwise operations to solve problems efficiently",
+      "subpatterns": [
+         {
+            "slug": "bit-manipulation",
+            "name": "Bit Manipulation",
+            "description": "Use bitwise operations like XOR, AND, OR, shifts to solve problems efficiently with constant space"
+         } 
+      ]
    }
+   
 ]
