@@ -1,11 +1,12 @@
 import React, { useEffect, useRef, useState, useMemo } from "react";
 import type { Company, Pattern, Problem } from "../types/graph";
 import { difficultyColors, difficulties, hashToPosition } from "../utils/graph";
+import { usePatternsGraph } from "../hooks/usePatternsGraph";
 
 export default function PatternsView() {
-  const containerRef = useRef<HTMLDivElement>(null);
   const [loading, setLoading] = useState(true);
   const [patterns, setPatterns] = useState<Pattern[]>([]);
+  const [problems, setProblems] = useState<Problem[]>([]);
   const [selectedDifficulties, setSelectedDifficulties] = useState<Set<string>>(new Set(difficulties));
   const [selectedPattern, setSelectedPattern] = useState<string>("");
   const [searchQuery, setSearchQuery] = useState<string>("");
@@ -17,9 +18,20 @@ export default function PatternsView() {
   const [totalProblems, setTotalProblems] = useState(0);
   const [visibleProblems, setVisibleProblems] = useState(0);
   const companyDropdownRef = useRef<HTMLDivElement>(null);
-  const rendererRef = useRef<any>(null);
-  const graphRef = useRef<any>(null);
-  const problemDataRef = useRef<Map<string, { difficulty: string; patterns: string[]; name: string }>>(new Map());
+
+  const { containerRef } = usePatternsGraph({
+    patterns,
+    problems,
+    companies,
+    selectedDifficulties,
+    selectedPattern,
+    searchQuery,
+    selectedCompany,
+    hoveredNode,
+    setHoveredNode,
+    setVisibleProblems,
+    setLoading,
+  });
 
   const filteredCompanies = useMemo(() => {
     if (!companySearch) return companies;
@@ -39,271 +51,24 @@ export default function PatternsView() {
   }, []);
 
   useEffect(() => {
-    if (!containerRef.current) return;
-
-    let renderer: any = null;
-
-    async function loadGraph() {
-      const [
-        { default: Graph },
-        { default: Sigma },
-        { NodeSquareProgram },
-        forceAtlas2Module,
-        patternsRes,
-        problemsRes,
-        companiesRes,
-      ] = await Promise.all([
-        import("graphology"),
-        import("sigma"),
-        import("@sigma/node-square"),
-        import("graphology-layout-forceatlas2"),
+    async function loadData() {
+      const [patternsRes, problemsRes, companiesRes] = await Promise.all([
         fetch("/patterns.json"),
         fetch("/problems.json"),
         fetch("/companies.json"),
       ]);
-      const forceAtlas2 = forceAtlas2Module.default;
       const patternsData: Pattern[] = await patternsRes.json();
-      const problems: Problem[] = await problemsRes.json();
+      const problemsData: Problem[] = await problemsRes.json();
       const companiesData: Company[] = await companiesRes.json();
 
       setPatterns(patternsData);
+      setProblems(problemsData);
       setCompanies(companiesData);
-      setTotalProblems(problems.length);
-      setVisibleProblems(problems.length);
-
-      const subSlugToFullId = new Map<string, string>();
-
-      const graph = new Graph();
-
-      patternsData.forEach((pattern, patternIndex) => {
-        const patternId = pattern.slug;
-        const angle = (2 * Math.PI * patternIndex) / patternsData.length;
-        const radius = 100;
-
-        graph.addNode(patternId, {
-          x: radius * Math.cos(angle),
-          y: radius * Math.sin(angle),
-          size: 16,
-          label: pattern.name,
-          color: "#6366f1",
-        });
-
-        pattern.subpatterns.forEach((sub, subIndex) => {
-          const subId = `${pattern.slug}/${sub.slug}`;
-          subSlugToFullId.set(sub.slug, subId);
-          const subRadius = radius + 50;
-          const subAngle = angle + (subIndex * 0.2);
-
-          graph.addNode(subId, {
-            x: subRadius * Math.cos(subAngle),
-            y: subRadius * Math.sin(subAngle),
-            size: 12,
-            label: sub.name,
-            color: "#a5b4fc",
-          });
-
-          graph.addEdge(patternId, subId);
-        });
-      });
-
-      const problemSlugMap = new Map<string, string>();
-
-      problems.forEach((problem) => {
-        const problemId = `problem-${problem.id}`;
-        problemSlugMap.set(problemId, problem.slug);
-        problemDataRef.current.set(problemId, {
-          difficulty: problem.difficulty,
-          patterns: problem.patterns,
-          name: problem.name,
-        });
-
-        const { x, y } = hashToPosition(problem.slug, 300);
-
-        graph.addNode(problemId, {
-          x,
-          y,
-          size: 5,
-          label: `${problem.id} - ${problem.name}`,
-          color: difficultyColors[problem.difficulty] || "#999",
-        });
-
-        problem.patterns.forEach((patternSlug) => {
-          const fullId = subSlugToFullId.get(patternSlug);
-          if (fullId && graph.hasNode(fullId)) {
-            graph.addEdge(problemId, fullId);
-          }
-        });
-      });
-
-      forceAtlas2.assign(graph, {
-        iterations: 100,
-        settings: {
-          scalingRatio: 1,
-          gravity: 1,
-        },
-      });
-
-      if (containerRef.current) {
-        graphRef.current = graph;
-        renderer = new Sigma(graph, containerRef.current, {
-          nodeProgramClasses: {
-            square: NodeSquareProgram,
-          },
-        });
-        rendererRef.current = renderer;
-
-        renderer.on("clickNode", ({ node }: { node: string }) => {
-          const slug = problemSlugMap.get(node);
-          if (slug) {
-            window.open(`https://leetcode.com/problems/${slug}`, "_blank");
-          }
-        });
-
-        renderer.on("enterNode", ({ node }: { node: string }) => {
-          setHoveredNode(node);
-        });
-
-        renderer.on("leaveNode", () => {
-          setHoveredNode(null);
-        });
-      }
-
-      setLoading(false);
+      setTotalProblems(problemsData.length);
+      setVisibleProblems(problemsData.length);
     }
-
-    loadGraph();
-
-    return () => {
-      if (renderer) renderer.kill();
-    };
+    loadData();
   }, []);
-
-  useEffect(() => {
-    const renderer = rendererRef.current;
-    const graph = graphRef.current;
-    if (!renderer) return;
-
-    renderer.setSetting("nodeReducer", (node: string, data: any) => {
-      const isParentFilter = selectedPattern.startsWith("parent:");
-      const filterSlug = isParentFilter ? selectedPattern.replace("parent:", "") : selectedPattern;
-
-      // Hover highlighting logic
-      if (hoveredNode && graph) {
-        const isHoveredNode = node === hoveredNode;
-        const isSubpattern = hoveredNode && !hoveredNode.includes("/") && node.startsWith(hoveredNode + "/");
-        const isParentPattern = node && !node.includes("/") && hoveredNode.startsWith(node + "/");
-        const isConnectedProblem = graph.hasEdge(node, hoveredNode) || graph.hasEdge(hoveredNode, node);
-
-        if (isHoveredNode || isSubpattern || isParentPattern || isConnectedProblem) {
-          return { ...data, zIndex: 1, highlighted: true };
-        } else {
-          return { ...data, color: "#e5e7eb", zIndex: 0 };
-        }
-      }
-
-      if (!node.startsWith("problem-")) {
-        if (selectedPattern) {
-          if (isParentFilter) {
-            if (!node.startsWith(filterSlug)) {
-              return { ...data, hidden: true };
-            }
-          } else {
-            const subpatternParent = patterns.find(p =>
-              p.subpatterns.some(s => s.slug === filterSlug)
-            )?.slug;
-
-            if (node.includes(filterSlug) || node === subpatternParent) {
-              return data;
-            }
-            return { ...data, hidden: true };
-          }
-        }
-        return data;
-      }
-
-      const problemInfo = problemDataRef.current.get(node);
-      if (!problemInfo) return data;
-
-      if (!selectedDifficulties.has(problemInfo.difficulty)) {
-        return { ...data, hidden: true };
-      }
-
-      if (searchQuery) {
-        const query = searchQuery.toLowerCase();
-        const problemId = node.replace("problem-", "");
-        if (!problemInfo.name.toLowerCase().includes(query) && !problemId.includes(query)) {
-          return { ...data, hidden: true };
-        }
-      }
-
-      if (selectedCompany) {
-        const company = companies.find(c => c.name === selectedCompany);
-        const problemId = parseInt(node.replace("problem-", ""));
-        if (company && !company.problems.includes(problemId)) {
-          return { ...data, hidden: true };
-        }
-      }
-
-      if (selectedPattern) {
-        if (isParentFilter) {
-          const parentPattern = patterns.find(p => p.slug === filterSlug);
-          const subSlugs = parentPattern?.subpatterns.map(s => s.slug) || [];
-          const hasMatch = problemInfo.patterns.some(p => subSlugs.includes(p));
-          if (!hasMatch) {
-            return { ...data, hidden: true };
-          }
-        } else {
-          if (!problemInfo.patterns.includes(filterSlug)) {
-            return { ...data, hidden: true };
-          }
-        }
-      }
-
-      return data;
-    });
-
-    renderer.setSetting("edgeReducer", (edge: string, data: any) => {
-      const graph = graphRef.current;
-      if (!graph) return data;
-
-      const source = graph.source(edge);
-      const target = graph.target(edge);
-
-      const sourceHidden = renderer.getNodeDisplayData(source)?.hidden;
-      const targetHidden = renderer.getNodeDisplayData(target)?.hidden;
-
-      if (sourceHidden || targetHidden) {
-        return { ...data, hidden: true };
-      }
-
-      // Hover highlighting for edges
-      if (hoveredNode) {
-        const isConnected = source === hoveredNode || target === hoveredNode;
-        if (!isConnected) {
-          return { ...data, color: "#e5e7eb", zIndex: 0 };
-        }
-        return { ...data, zIndex: 1 };
-      }
-
-      return data;
-    });
-
-    renderer.refresh();
-
-    // Count visible problems
-    if (graph && !hoveredNode) {
-      let count = 0;
-      graph.forEachNode((node: string) => {
-        if (node.startsWith("problem-")) {
-          const displayData = renderer.getNodeDisplayData(node);
-          if (!displayData?.hidden) {
-            count++;
-          }
-        }
-      });
-      setVisibleProblems(count);
-    }
-  }, [selectedDifficulties, selectedPattern, patterns, searchQuery, selectedCompany, companies, hoveredNode]);
 
   const toggleDifficulty = (diff: string) => {
     setSelectedDifficulties((prev) => {
@@ -328,8 +93,8 @@ export default function PatternsView() {
               key={diff}
               onClick={() => toggleDifficulty(diff)}
               className={`relative px-3 py-1.5 text-sm font-medium rounded-md transition-all duration-200 ${selectedDifficulties.has(diff)
-                  ? "text-white shadow-sm"
-                  : "text-gray-600 hover:text-gray-900 hover:bg-gray-200"
+                ? "text-white shadow-sm"
+                : "text-gray-600 hover:text-gray-900 hover:bg-gray-200"
                 }`}
               style={{
                 backgroundColor: selectedDifficulties.has(diff) ? difficultyColors[diff] : undefined,
