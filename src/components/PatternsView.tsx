@@ -1,24 +1,6 @@
 import React, { useEffect, useRef, useState, useMemo } from "react";
 import type { Company, Pattern, Problem } from "../types/graph";
-
-const difficultyColors: Record<string, string> = {
-  Easy: "#00b8a3",
-  Medium: "#ffc01e",
-  Hard: "#ff375f",
-};
-
-const difficulties = ["Easy", "Medium", "Hard"] as const;
-
-function hashToPosition(str: string, scale = 200) {
-  let hash = 0;
-  for (let i = 0; i < str.length; i++) {
-    hash = str.charCodeAt(i) + ((hash << 5) - hash);
-    hash = hash & hash;
-  }
-  const x = ((hash % scale) + scale) % scale;
-  const y = (((hash >> 8) % scale) + scale) % scale;
-  return { x, y };
-}
+import { difficultyColors, difficulties, hashToPosition } from "../utils/graph";
 
 export default function PatternsView() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -41,7 +23,7 @@ export default function PatternsView() {
 
   const filteredCompanies = useMemo(() => {
     if (!companySearch) return companies;
-    return companies.filter(c => 
+    return companies.filter(c =>
       c.name.toLowerCase().includes(companySearch.toLowerCase())
     );
   }, [companies, companySearch]);
@@ -211,7 +193,7 @@ export default function PatternsView() {
         const isSubpattern = hoveredNode && !hoveredNode.includes("/") && node.startsWith(hoveredNode + "/");
         const isParentPattern = node && !node.includes("/") && hoveredNode.startsWith(node + "/");
         const isConnectedProblem = graph.hasEdge(node, hoveredNode) || graph.hasEdge(hoveredNode, node);
-        
+
         if (isHoveredNode || isSubpattern || isParentPattern || isConnectedProblem) {
           return { ...data, zIndex: 1, highlighted: true };
         } else {
@@ -226,10 +208,10 @@ export default function PatternsView() {
               return { ...data, hidden: true };
             }
           } else {
-            const subpatternParent = patterns.find(p => 
+            const subpatternParent = patterns.find(p =>
               p.subpatterns.some(s => s.slug === filterSlug)
             )?.slug;
-            
+
             if (node.includes(filterSlug) || node === subpatternParent) {
               return data;
             }
@@ -345,11 +327,10 @@ export default function PatternsView() {
             <button
               key={diff}
               onClick={() => toggleDifficulty(diff)}
-              className={`relative px-3 py-1.5 text-sm font-medium rounded-md transition-all duration-200 ${
-                selectedDifficulties.has(diff)
+              className={`relative px-3 py-1.5 text-sm font-medium rounded-md transition-all duration-200 ${selectedDifficulties.has(diff)
                   ? "text-white shadow-sm"
                   : "text-gray-600 hover:text-gray-900 hover:bg-gray-200"
-              }`}
+                }`}
               style={{
                 backgroundColor: selectedDifficulties.has(diff) ? difficultyColors[diff] : undefined,
               }}
@@ -440,9 +421,8 @@ export default function PatternsView() {
                     setCompanySearch("");
                     setCompanyDropdownOpen(false);
                   }}
-                  className={`px-3 py-2 text-sm cursor-pointer hover:bg-gray-50 ${
-                    selectedCompany === company.name ? "bg-emerald-50 text-emerald-700" : "text-gray-700"
-                  }`}
+                  className={`px-3 py-2 text-sm cursor-pointer hover:bg-gray-50 ${selectedCompany === company.name ? "bg-emerald-50 text-emerald-700" : "text-gray-700"
+                    }`}
                 >
                   {company.name}
                 </div>
