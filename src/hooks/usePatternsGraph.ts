@@ -170,6 +170,65 @@ export function usePatternsGraph({
             const isParentFilter = selectedPattern.startsWith("parent:");
             const filterSlug = isParentFilter ? selectedPattern.replace("parent:", "") : selectedPattern;
 
+            // 1. Determine visibility first
+            let isHidden = false;
+            if (!node.startsWith("problem-")) {
+                if (selectedPattern) {
+                    if (isParentFilter) {
+                        if (!node.startsWith(filterSlug)) {
+                            isHidden = true;
+                        }
+                    } else {
+                        const subpatternParent = patterns.find(p =>
+                            p.subpatterns.some(s => s.slug === filterSlug)
+                        )?.slug;
+
+                        if (node.includes(filterSlug) || node === subpatternParent) {
+                            // Keep visible
+                        } else {
+                            isHidden = true;
+                        }
+                    }
+                }
+            } else {
+                const problemInfo = problemDataRef.current.get(node);
+                if (!problemInfo) {
+                    isHidden = true;
+                } else {
+                    if (!selectedDifficulties.has(problemInfo.difficulty)) {
+                        isHidden = true;
+                    } else if (searchQuery) {
+                        const query = searchQuery.toLowerCase();
+                        const problemId = node.replace("problem-", "");
+                        if (!problemInfo.name.toLowerCase().includes(query) && !problemId.includes(query)) {
+                            isHidden = true;
+                        }
+                    } else if (selectedCompany) {
+                        const company = companies.find(c => c.name === selectedCompany);
+                        const problemId = parseInt(node.replace("problem-", ""));
+                        if (company && !company.problems.includes(problemId)) {
+                            isHidden = true;
+                        }
+                    } else if (selectedPattern) {
+                        if (isParentFilter) {
+                            const parentPattern = patterns.find(p => p.slug === filterSlug);
+                            const subSlugs = parentPattern?.subpatterns.map(s => s.slug) || [];
+                            const hasMatch = problemInfo.patterns.some(p => subSlugs.includes(p));
+                            if (!hasMatch) {
+                                isHidden = true;
+                            }
+                        } else {
+                            if (!problemInfo.patterns.includes(filterSlug)) {
+                                isHidden = true;
+                            }
+                        }
+                    }
+                }
+            }
+
+            if (isHidden) return { ...data, hidden: true };
+
+            // 2. Apply hover logic only if visible
             if (hoveredNode && graph) {
                 const isHoveredNode = node === hoveredNode;
                 const isSubpattern = hoveredNode && !hoveredNode.includes("/") && node.startsWith(hoveredNode + "/");
@@ -180,64 +239,6 @@ export function usePatternsGraph({
                     return { ...data, zIndex: 1, highlighted: true };
                 } else {
                     return { ...data, color: "#e5e7eb", zIndex: 0 };
-                }
-            }
-
-            if (!node.startsWith("problem-")) {
-                if (selectedPattern) {
-                    if (isParentFilter) {
-                        if (!node.startsWith(filterSlug)) {
-                            return { ...data, hidden: true };
-                        }
-                    } else {
-                        const subpatternParent = patterns.find(p =>
-                            p.subpatterns.some(s => s.slug === filterSlug)
-                        )?.slug;
-
-                        if (node.includes(filterSlug) || node === subpatternParent) {
-                            return data;
-                        }
-                        return { ...data, hidden: true };
-                    }
-                }
-                return data;
-            }
-
-            const problemInfo = problemDataRef.current.get(node);
-            if (!problemInfo) return data;
-
-            if (!selectedDifficulties.has(problemInfo.difficulty)) {
-                return { ...data, hidden: true };
-            }
-
-            if (searchQuery) {
-                const query = searchQuery.toLowerCase();
-                const problemId = node.replace("problem-", "");
-                if (!problemInfo.name.toLowerCase().includes(query) && !problemId.includes(query)) {
-                    return { ...data, hidden: true };
-                }
-            }
-
-            if (selectedCompany) {
-                const company = companies.find(c => c.name === selectedCompany);
-                const problemId = parseInt(node.replace("problem-", ""));
-                if (company && !company.problems.includes(problemId)) {
-                    return { ...data, hidden: true };
-                }
-            }
-
-            if (selectedPattern) {
-                if (isParentFilter) {
-                    const parentPattern = patterns.find(p => p.slug === filterSlug);
-                    const subSlugs = parentPattern?.subpatterns.map(s => s.slug) || [];
-                    const hasMatch = problemInfo.patterns.some(p => subSlugs.includes(p));
-                    if (!hasMatch) {
-                        return { ...data, hidden: true };
-                    }
-                } else {
-                    if (!problemInfo.patterns.includes(filterSlug)) {
-                        return { ...data, hidden: true };
-                    }
                 }
             }
 
