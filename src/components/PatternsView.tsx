@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState, useMemo } from "react";
 import type { Company, Pattern, Problem } from "../types/graph";
 import { difficultyColors, difficulties, hashToPosition } from "../utils/graph";
 import { usePatternsGraph } from "../hooks/usePatternsGraph";
+import DifficultyFilter from "./filters/DifficultyFilter";
 
 export default function PatternsView() {
   const [loading, setLoading] = useState(true);
@@ -86,24 +87,10 @@ export default function PatternsView() {
     <div className="w-full h-full flex flex-col">
       {/* Filter panel */}
       <div className="px-4 py-3 bg-white border-b border-gray-200 flex items-center gap-6 flex-wrap">
-        {/* Difficulty filter */}
-        <div className="flex items-center gap-1 p-1 bg-gray-100 rounded-lg">
-          {difficulties.map((diff) => (
-            <button
-              key={diff}
-              onClick={() => toggleDifficulty(diff)}
-              className={`relative px-3 py-1.5 text-sm font-medium rounded-md transition-all duration-200 ${selectedDifficulties.has(diff)
-                ? "text-white shadow-sm"
-                : "text-gray-600 hover:text-gray-900 hover:bg-gray-200"
-                }`}
-              style={{
-                backgroundColor: selectedDifficulties.has(diff) ? difficultyColors[diff] : undefined,
-              }}
-            >
-              {diff}
-            </button>
-          ))}
-        </div>
+        <DifficultyFilter
+          selectedDifficulties={selectedDifficulties}
+          toggleDifficulty={toggleDifficulty}
+        />
 
         {/* Search input */}
         <div className="relative">
