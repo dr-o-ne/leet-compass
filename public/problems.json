@@ -569,6 +569,15 @@
       ]
    },
    {
+      "id": 1876,
+      "difficulty": "Easy",
+      "name": "Substrings of Size Three with Distinct Characters",
+      "slug": "substrings-of-size-three-with-distinct-characters",
+      "patterns": [
+         "fixed-size-window"
+      ]
+   },
+   {
       "id": 1926,
       "difficulty": "Medium",
       "name": "Nearest Exit from Entrance in Maze",
