@@ -1,625 +1,625 @@
 [
    {
-      "id":1,
-      "difficulty":"Easy",
-      "name":"Two Sum",
-      "slug":"two-sum",
-      "patterns":[
+      "id": 1,
+      "difficulty": "Easy",
+      "name": "Two Sum",
+      "slug": "two-sum",
+      "patterns": [
          "frequency-map"
       ]
    },
    {
-      "id":3,
-      "difficulty":"Medium",
-      "name":"Longest Substring Without Repeating Characters",
-      "slug":"longest-substring-without-repeating-characters",
-      "patterns":[
+      "id": 3,
+      "difficulty": "Medium",
+      "name": "Longest Substring Without Repeating Characters",
+      "slug": "longest-substring-without-repeating-characters",
+      "patterns": [
          "last-seen-index"
       ]
    },
    {
-      "id":11,
-      "difficulty":"Medium",
-      "name":"Container With Most Water",
-      "slug":"container-with-most-water",
-      "patterns":[
+      "id": 11,
+      "difficulty": "Medium",
+      "name": "Container With Most Water",
+      "slug": "container-with-most-water",
+      "patterns": [
          "opposite-ends"
       ]
    },
    {
-      "id":15,
-      "difficulty":"Medium",
-      "name":"3Sum",
-      "slug":"3sum",
-      "patterns":[
+      "id": 15,
+      "difficulty": "Medium",
+      "name": "3Sum",
+      "slug": "3sum",
+      "patterns": [
          "opposite-ends"
       ]
    },
    {
-      "id":20,
-      "difficulty":"Easy",
-      "name":"Valid Parentheses",
-      "slug":"valid-parentheses",
-      "patterns":[
+      "id": 20,
+      "difficulty": "Easy",
+      "name": "Valid Parentheses",
+      "slug": "valid-parentheses",
+      "patterns": [
          "stack-fundamentals"
       ]
    },
    {
-      "id":26,
-      "difficulty":"Easy",
-      "name":"Remove Duplicates from Sorted Array",
-      "slug":"remove-duplicates-from-sorted-array",
-      "patterns":[
+      "id": 26,
+      "difficulty": "Easy",
+      "name": "Remove Duplicates from Sorted Array",
+      "slug": "remove-duplicates-from-sorted-array",
+      "patterns": [
          "same-direction"
       ]
    },
    {
-      "id":27,
-      "difficulty":"Easy",
-      "name":"Remove Element",
-      "slug":"remove-element",
-      "patterns":[
+      "id": 27,
+      "difficulty": "Easy",
+      "name": "Remove Element",
+      "slug": "remove-element",
+      "patterns": [
          "same-direction"
       ]
    },
    {
-      "id":30,
-      "difficulty":"Hard",
-      "name":"Substring with Concatenation of All Words",
-      "slug":"substring-with-concatenation-of-all-words",
-      "patterns":[
+      "id": 30,
+      "difficulty": "Hard",
+      "name": "Substring with Concatenation of All Words",
+      "slug": "substring-with-concatenation-of-all-words",
+      "patterns": [
          "fixed-size-window"
       ]
    },
    {
-      "id":71,
-      "difficulty":"Medium",
-      "name":"Simplify Path",
-      "slug":"simplify-path",
-      "patterns":[
+      "id": 71,
+      "difficulty": "Medium",
+      "name": "Simplify Path",
+      "slug": "simplify-path",
+      "patterns": [
          "stack-fundamentals"
       ]
    },
    {
-      "id":76,
-      "difficulty":"Hard",
-      "name":"Minimum Window Substring",
-      "slug":"minimum-window-substring",
-      "patterns":[
+      "id": 76,
+      "difficulty": "Hard",
+      "name": "Minimum Window Substring",
+      "slug": "minimum-window-substring",
+      "patterns": [
          "variable-size-window"
       ]
    },
    {
-      "id":80,
-      "difficulty":"Medium",
-      "name":"Remove Duplicates from Sorted Array II",
-      "slug":"remove-duplicates-from-sorted-array-ii",
-      "patterns":[
+      "id": 80,
+      "difficulty": "Medium",
+      "name": "Remove Duplicates from Sorted Array II",
+      "slug": "remove-duplicates-from-sorted-array-ii",
+      "patterns": [
          "same-direction"
       ]
    },
    {
-      "id":88,
-      "difficulty":"Easy",
-      "name":"Merge Sorted Array",
-      "slug":"merge-sorted-array",
-      "patterns":[
+      "id": 88,
+      "difficulty": "Easy",
+      "name": "Merge Sorted Array",
+      "slug": "merge-sorted-array",
+      "patterns": [
          "merge-two-arrays"
       ]
    },
    {
-      "id":125,
-      "difficulty":"Easy",
-      "name":"Valid Palindrome",
-      "slug":"valid-palindrome",
-      "patterns":[
+      "id": 125,
+      "difficulty": "Easy",
+      "name": "Valid Palindrome",
+      "slug": "valid-palindrome",
+      "patterns": [
          "opposite-ends"
       ]
    },
    {
-      "id":136,
-      "difficulty":"Easy",
-      "name":"Single Number",
-      "slug":"single-number",
-      "patterns":[
+      "id": 136,
+      "difficulty": "Easy",
+      "name": "Single Number",
+      "slug": "single-number",
+      "patterns": [
          "bit-manipulation"
       ]
    },
    {
-      "id":150,
-      "difficulty":"Medium",
-      "name":"Evaluate Reverse Polish Notation",
-      "slug":"evaluate-reverse-polish-notation",
-      "patterns":[
+      "id": 150,
+      "difficulty": "Medium",
+      "name": "Evaluate Reverse Polish Notation",
+      "slug": "evaluate-reverse-polish-notation",
+      "patterns": [
          "expression-evaluation"
       ]
    },
    {
-      "id":151,
-      "difficulty":"Medium",
-      "name":"Reverse Words in a String",
-      "slug":"reverse-words-in-a-string",
-      "patterns":[
+      "id": 151,
+      "difficulty": "Medium",
+      "name": "Reverse Words in a String",
+      "slug": "reverse-words-in-a-string",
+      "patterns": [
          "same-direction"
       ]
    },
    {
-      "id":155,
-      "difficulty":"Medium",
-      "name":"Min Stack",
-      "slug":"min-stack",
-      "patterns":[
+      "id": 155,
+      "difficulty": "Medium",
+      "name": "Min Stack",
+      "slug": "min-stack",
+      "patterns": [
          "stack-fundamentals",
          "classic-ds-design"
       ]
    },
    {
-      "id":159,
-      "difficulty":"Medium",
-      "name":"Longest Substring with At Most Two Distinct Characters",
-      "slug":"longest-substring-with-at-most-two-distinct-characters",
-      "patterns":[
+      "id": 159,
+      "difficulty": "Medium",
+      "name": "Longest Substring with At Most Two Distinct Characters",
+      "slug": "longest-substring-with-at-most-two-distinct-characters",
+      "patterns": [
          "variable-size-window"
       ]
    },
    {
-      "id":167,
-      "difficulty":"Medium",
-      "name":"Two Sum II - Input Array Is Sorted",
-      "slug":"two-sum-ii-input-array-is-sorted",
-      "patterns":[
+      "id": 167,
+      "difficulty": "Medium",
+      "name": "Two Sum II - Input Array Is Sorted",
+      "slug": "two-sum-ii-input-array-is-sorted",
+      "patterns": [
          "opposite-ends"
       ]
    },
    {
-      "id":187,
-      "difficulty":"Medium",
-      "name":"Repeated DNA Sequences",
-      "slug":"repeated-dna-sequences",
-      "patterns":[
+      "id": 187,
+      "difficulty": "Medium",
+      "name": "Repeated DNA Sequences",
+      "slug": "repeated-dna-sequences",
+      "patterns": [
          "fixed-size-window"
       ]
    },
    {
-      "id":199,
-      "difficulty":"Medium",
-      "name":"Binary Tree Right Side View",
-      "slug":"binary-tree-right-side-view",
-      "patterns":[
+      "id": 199,
+      "difficulty": "Medium",
+      "name": "Binary Tree Right Side View",
+      "slug": "binary-tree-right-side-view",
+      "patterns": [
          "tree-bfs",
          "tree-dfs-top-down"
       ]
    },
    {
-      "id":209,
-      "difficulty":"Medium",
-      "name":"Minimum Size Subarray Sum",
-      "slug":"minimum-size-subarray-sum",
-      "patterns":[
+      "id": 209,
+      "difficulty": "Medium",
+      "name": "Minimum Size Subarray Sum",
+      "slug": "minimum-size-subarray-sum",
+      "patterns": [
          "variable-size-window"
       ]
    },
    {
-      "id":219,
-      "difficulty":"Easy",
-      "name":"Contains Duplicate II",
-      "slug":"contains-duplicate-ii",
-      "patterns":[
+      "id": 219,
+      "difficulty": "Easy",
+      "name": "Contains Duplicate II",
+      "slug": "contains-duplicate-ii",
+      "patterns": [
          "last-seen-index"
       ]
    },
    {
-      "id":238,
-      "difficulty":"Medium",
-      "name":"Product of Array Except Self",
-      "slug":"product-of-array-except-self",
-      "patterns":[
+      "id": 238,
+      "difficulty": "Medium",
+      "name": "Product of Array Except Self",
+      "slug": "product-of-array-except-self",
+      "patterns": [
          "prefix-sum-product"
       ]
    },
    {
-      "id":283,
-      "difficulty":"Easy",
-      "name":"Move Zeroes",
-      "slug":"move-zeroes",
-      "patterns":[
+      "id": 283,
+      "difficulty": "Easy",
+      "name": "Move Zeroes",
+      "slug": "move-zeroes",
+      "patterns": [
          "same-direction"
       ]
    },
    {
-      "id":334,
-      "difficulty":"Medium",
-      "name":"Increasing Triplet Subsequence",
-      "slug":"increasing-triplet-subsequence",
-      "patterns":[
+      "id": 334,
+      "difficulty": "Medium",
+      "name": "Increasing Triplet Subsequence",
+      "slug": "increasing-triplet-subsequence",
+      "patterns": [
          "local-optimal-choice"
       ]
    },
    {
-      "id":340,
-      "difficulty":"Medium",
-      "name":"Longest Substring with At Most K Distinct Characters",
-      "slug":"longest-substring-with-at-most-k-distinct-characters",
-      "patterns":[
+      "id": 340,
+      "difficulty": "Medium",
+      "name": "Longest Substring with At Most K Distinct Characters",
+      "slug": "longest-substring-with-at-most-k-distinct-characters",
+      "patterns": [
          "variable-size-window"
       ]
    },
    {
-      "id":345,
-      "difficulty":"Easy",
-      "name":"Reverse Vowels of a String",
-      "slug":"reverse-vowels-of-a-string",
-      "patterns":[
+      "id": 345,
+      "difficulty": "Easy",
+      "name": "Reverse Vowels of a String",
+      "slug": "reverse-vowels-of-a-string",
+      "patterns": [
          "opposite-ends"
       ]
    },
    {
-      "id":392,
-      "difficulty":"Easy",
-      "name":"Is Subsequence",
-      "slug":"is-subsequence",
-      "patterns":[
+      "id": 392,
+      "difficulty": "Easy",
+      "name": "Is Subsequence",
+      "slug": "is-subsequence",
+      "patterns": [
          "same-direction"
       ]
    },
    {
-      "id":394,
-      "difficulty":"Medium",
-      "name":"Decode String",
-      "slug":"decode-string",
-      "patterns":[
+      "id": 394,
+      "difficulty": "Medium",
+      "name": "Decode String",
+      "slug": "decode-string",
+      "patterns": [
          "expression-evaluation"
       ]
    },
    {
-      "id":399,
-      "difficulty":"Medium",
-      "name":"Evaluate Division",
-      "slug":"evaluate-division",
-      "patterns":[
+      "id": 399,
+      "difficulty": "Medium",
+      "name": "Evaluate Division",
+      "slug": "evaluate-division",
+      "patterns": [
          "graph-bfs",
          "graph-dfs",
          "union-find"
       ]
    },
    {
-      "id":424,
-      "difficulty":"Medium",
-      "name":"Longest Repeating Character Replacement",
-      "slug":"longest-repeating-character-replacement",
-      "patterns":[
+      "id": 424,
+      "difficulty": "Medium",
+      "name": "Longest Repeating Character Replacement",
+      "slug": "longest-repeating-character-replacement",
+      "patterns": [
          "variable-size-window"
       ]
    },
    {
-      "id":438,
-      "difficulty":"Medium",
-      "name":"Find All Anagrams in a String",
-      "slug":"find-all-anagrams-in-a-string",
-      "patterns":[
+      "id": 438,
+      "difficulty": "Medium",
+      "name": "Find All Anagrams in a String",
+      "slug": "find-all-anagrams-in-a-string",
+      "patterns": [
          "fixed-size-window"
       ]
    },
    {
-      "id":443,
-      "difficulty":"Medium",
-      "name":"String Compression",
-      "slug":"string-compression",
-      "patterns":[
+      "id": 443,
+      "difficulty": "Medium",
+      "name": "String Compression",
+      "slug": "string-compression",
+      "patterns": [
          "same-direction"
       ]
    },
    {
-      "id":496,
-      "difficulty":"Easy",
-      "name":"Next Greater Element I",
-      "slug":"next-greater-element-i",
-      "patterns":[
+      "id": 496,
+      "difficulty": "Easy",
+      "name": "Next Greater Element I",
+      "slug": "next-greater-element-i",
+      "patterns": [
          "monotonic-stack"
       ]
    },
    {
-      "id":503,
-      "difficulty":"Medium",
-      "name":"Next Greater Element II",
-      "slug":"next-greater-element-ii",
-      "patterns":[
+      "id": 503,
+      "difficulty": "Medium",
+      "name": "Next Greater Element II",
+      "slug": "next-greater-element-ii",
+      "patterns": [
          "monotonic-stack"
       ]
    },
    {
-      "id":547,
-      "difficulty":"Medium",
-      "name":"Number of Provinces",
-      "slug":"number-of-provinces",
-      "patterns":[
+      "id": 547,
+      "difficulty": "Medium",
+      "name": "Number of Provinces",
+      "slug": "number-of-provinces",
+      "patterns": [
          "graph-bfs",
          "graph-dfs",
          "union-find"
       ]
    },
    {
-      "id":567,
-      "difficulty":"Medium",
-      "name":"Permutation in String",
-      "slug":"permutation-in-string",
-      "patterns":[
+      "id": 567,
+      "difficulty": "Medium",
+      "name": "Permutation in String",
+      "slug": "permutation-in-string",
+      "patterns": [
          "fixed-size-window"
       ]
    },
    {
-      "id":605,
-      "difficulty":"Easy",
-      "name":"Can Place Flowers",
-      "slug":"can-place-flowers",
-      "patterns":[
+      "id": 605,
+      "difficulty": "Easy",
+      "name": "Can Place Flowers",
+      "slug": "can-place-flowers",
+      "patterns": [
          "local-optimal-choice"
       ]
    },
    {
-      "id":617,
-      "difficulty":"Easy",
-      "name":"Merge Two Binary Trees",
-      "slug":"merge-two-binary-trees",
-      "patterns":[
+      "id": 617,
+      "difficulty": "Easy",
+      "name": "Merge Two Binary Trees",
+      "slug": "merge-two-binary-trees",
+      "patterns": [
          "tree-dfs-bottom-up"
       ]
    },
    {
-      "id":637,
-      "difficulty":"Easy",
-      "name":"Average of Levels in Binary Tree",
-      "slug":"average-of-levels-in-binary-tree",
-      "patterns":[
+      "id": 637,
+      "difficulty": "Easy",
+      "name": "Average of Levels in Binary Tree",
+      "slug": "average-of-levels-in-binary-tree",
+      "patterns": [
          "graph-bfs",
          "graph-dfs"
       ]
    },
    {
-      "id":643,
-      "slug":"maximum-average-subarray-i",
-      "difficulty":"Easy",
-      "name":"Maximum Average Subarray I",
-      "patterns":[
+      "id": 643,
+      "slug": "maximum-average-subarray-i",
+      "difficulty": "Easy",
+      "name": "Maximum Average Subarray I",
+      "patterns": [
          "prefix-sum-product",
          "fixed-size-window"
       ]
    },
    {
-      "id":713,
-      "difficulty":"Medium",
-      "name":"Subarray Product Less Than K",
-      "slug":"subarray-product-less-than-k",
-      "patterns":[
+      "id": 713,
+      "difficulty": "Medium",
+      "name": "Subarray Product Less Than K",
+      "slug": "subarray-product-less-than-k",
+      "patterns": [
          "variable-size-window"
       ]
    },
    {
-      "id":735,
-      "difficulty":"Medium",
-      "name":"Asteroid Collision",
-      "slug":"asteroid-collision",
-      "patterns":[
+      "id": 735,
+      "difficulty": "Medium",
+      "name": "Asteroid Collision",
+      "slug": "asteroid-collision",
+      "patterns": [
          "stack-fundamentals"
       ]
    },
    {
-      "id":739,
-      "difficulty":"Medium",
-      "name":"Daily Temperatures",
-      "slug":"daily-temperatures",
-      "patterns":[
+      "id": 739,
+      "difficulty": "Medium",
+      "name": "Daily Temperatures",
+      "slug": "daily-temperatures",
+      "patterns": [
          "monotonic-stack"
       ]
    },
    {
-      "id":841,
-      "difficulty":"Medium",
-      "name":"Keys and Rooms",
-      "slug":"keys-and-rooms",
-      "patterns":[
+      "id": 841,
+      "difficulty": "Medium",
+      "name": "Keys and Rooms",
+      "slug": "keys-and-rooms",
+      "patterns": [
          "graph-dfs",
          "graph-bfs"
       ]
    },
    {
-      "id":901,
-      "difficulty":"Medium",
-      "name":"Online Stock Span",
-      "slug":"online-stock-span",
-      "patterns":[
+      "id": 901,
+      "difficulty": "Medium",
+      "name": "Online Stock Span",
+      "slug": "online-stock-span",
+      "patterns": [
          "monotonic-stack"
       ]
    },
    {
-      "id":904,
-      "difficulty":"Medium",
-      "name":"Fruit Into Baskets",
-      "slug":"fruit-into-baskets",
-      "patterns":[
+      "id": 904,
+      "difficulty": "Medium",
+      "name": "Fruit Into Baskets",
+      "slug": "fruit-into-baskets",
+      "patterns": [
          "variable-size-window"
       ]
    },
    {
-      "id":994,
-      "difficulty":"Medium",
-      "name":"Rotting Oranges",
-      "slug":"rotting-oranges",
-      "patterns":[
+      "id": 994,
+      "difficulty": "Medium",
+      "name": "Rotting Oranges",
+      "slug": "rotting-oranges",
+      "patterns": [
          "graph-bfs"
       ]
-   },   
+   },
    {
-      "id":1004,
-      "difficulty":"Medium",
-      "name":"Max Consecutive Ones III",
-      "slug":"max-consecutive-ones-iii",
-      "patterns":[
+      "id": 1004,
+      "difficulty": "Medium",
+      "name": "Max Consecutive Ones III",
+      "slug": "max-consecutive-ones-iii",
+      "patterns": [
          "variable-size-window"
       ]
    },
    {
-      "id":1047,
-      "difficulty":"Easy",
-      "name":"Remove All Adjacent Duplicates In String",
-      "slug":"remove-all-adjacent-duplicates-in-string",
-      "patterns":[
+      "id": 1047,
+      "difficulty": "Easy",
+      "name": "Remove All Adjacent Duplicates In String",
+      "slug": "remove-all-adjacent-duplicates-in-string",
+      "patterns": [
          "stack-fundamentals"
       ]
    },
    {
-      "id":1161,
-      "difficulty":"Medium",
-      "name":"Maximum Level Sum of a Binary Tree",
-      "slug":"maximum-level-sum-of-a-binary-tree",
-      "patterns":[
+      "id": 1161,
+      "difficulty": "Medium",
+      "name": "Maximum Level Sum of a Binary Tree",
+      "slug": "maximum-level-sum-of-a-binary-tree",
+      "patterns": [
          "tree-bfs",
          "tree-dfs-top-down"
       ]
    },
    {
-      "id":1207,
-      "difficulty":"Easy",
-      "name":"Unique Number of Occurrences",
-      "slug":"unique-number-of-occurrences",
-      "patterns":[
+      "id": 1207,
+      "difficulty": "Easy",
+      "name": "Unique Number of Occurrences",
+      "slug": "unique-number-of-occurrences",
+      "patterns": [
          "frequency-map"
       ]
    },
    {
-      "id":1372,
-      "difficulty":"Medium",
-      "name":"Longest ZigZag Path in a Binary Tree",
-      "slug":"longest-zigzag-path-in-a-binary-tree",
-      "patterns":[
+      "id": 1372,
+      "difficulty": "Medium",
+      "name": "Longest ZigZag Path in a Binary Tree",
+      "slug": "longest-zigzag-path-in-a-binary-tree",
+      "patterns": [
          "tree-dfs-top-down"
       ]
    },
    {
-      "id":1431,
-      "difficulty":"Easy",
-      "name":"Kids With the Greatest Number of Candies",
-      "slug":"kids-with-the-greatest-number-of-candies",
-      "patterns":[
+      "id": 1431,
+      "difficulty": "Easy",
+      "name": "Kids With the Greatest Number of Candies",
+      "slug": "kids-with-the-greatest-number-of-candies",
+      "patterns": [
          "array-fundamentals"
       ]
    },
    {
-      "id":1456,
-      "difficulty":"Medium",
-      "name":"Maximum Number of Vowels in a Substring of Given Length",
-      "slug":"maximum-number-of-vowels-in-a-substring-of-given-length",
-      "patterns":[
+      "id": 1456,
+      "difficulty": "Medium",
+      "name": "Maximum Number of Vowels in a Substring of Given Length",
+      "slug": "maximum-number-of-vowels-in-a-substring-of-given-length",
+      "patterns": [
          "fixed-size-window"
       ]
    },
    {
-      "id":1466,
-      "difficulty":"Medium",
-      "name":"Reorder Routes to Make All Paths Lead to the City Zero",
-      "slug":"reorder-routes-to-make-all-paths-lead-to-the-city-zero",
-      "patterns":[
+      "id": 1466,
+      "difficulty": "Medium",
+      "name": "Reorder Routes to Make All Paths Lead to the City Zero",
+      "slug": "reorder-routes-to-make-all-paths-lead-to-the-city-zero",
+      "patterns": [
          "graph-dfs",
          "graph-bfs"
       ]
    },
    {
-      "id":1493,
-      "difficulty":"Medium",
-      "name":"Longest Subarray of 1\u0027s After Deleting One Element",
-      "slug":"longest-subarray-of-1s-after-deleting-one-element",
-      "patterns":[
+      "id": 1493,
+      "difficulty": "Medium",
+      "name": "Longest Subarray of 1's After Deleting One Element",
+      "slug": "longest-subarray-of-1s-after-deleting-one-element",
+      "patterns": [
          "variable-size-window"
       ]
    },
    {
-      "id":1657,
-      "difficulty":"Medium",
-      "name":"Determine if Two Strings Are Close",
-      "slug":"determine-if-two-strings-are-close",
-      "patterns":[
+      "id": 1657,
+      "difficulty": "Medium",
+      "name": "Determine if Two Strings Are Close",
+      "slug": "determine-if-two-strings-are-close",
+      "patterns": [
          "frequency-map"
       ]
    },
    {
-      "id":1679,
-      "difficulty":"Medium",
-      "name":"Max Number of K-Sum Pairs",
-      "slug":"max-number-of-k-sum-pairs",
-      "patterns":[
+      "id": 1679,
+      "difficulty": "Medium",
+      "name": "Max Number of K-Sum Pairs",
+      "slug": "max-number-of-k-sum-pairs",
+      "patterns": [
          "frequency-map"
       ]
    },
    {
-      "id":1732,
-      "difficulty":"Easy",
-      "name":"Find the Highest Altitude",
-      "slug":"find-the-highest-altitude",
-      "patterns":[
+      "id": 1732,
+      "difficulty": "Easy",
+      "name": "Find the Highest Altitude",
+      "slug": "find-the-highest-altitude",
+      "patterns": [
          "prefix-sum-product"
       ]
    },
    {
-      "id":1768,
-      "difficulty":"Easy",
-      "name":"Merge Strings Alternately",
-      "slug":"merge-strings-alternately",
-      "patterns":[
+      "id": 1768,
+      "difficulty": "Easy",
+      "name": "Merge Strings Alternately",
+      "slug": "merge-strings-alternately",
+      "patterns": [
          "same-direction"
       ]
    },
    {
-      "id":1926,
-      "difficulty":"Medium",
-      "name":"Nearest Exit from Entrance in Maze",
-      "slug":"nearest-exit-from-entrance-in-maze",
-      "patterns":[
+      "id": 1926,
+      "difficulty": "Medium",
+      "name": "Nearest Exit from Entrance in Maze",
+      "slug": "nearest-exit-from-entrance-in-maze",
+      "patterns": [
          "graph-bfs"
       ]
    },
    {
-      "id":2215,
-      "difficulty":"Easy",
-      "name":"Find the Difference of Two Arrays",
-      "slug":"find-the-difference-of-two-arrays",
-      "patterns":[
+      "id": 2215,
+      "difficulty": "Easy",
+      "name": "Find the Difference of Two Arrays",
+      "slug": "find-the-difference-of-two-arrays",
+      "patterns": [
          "frequency-map"
       ]
    },
    {
-      "id":2352,
-      "difficulty":"Medium",
-      "name":"Equal Row and Column Pairs",
-      "slug":"equal-row-and-column-pairs",
-      "patterns":[
+      "id": 2352,
+      "difficulty": "Medium",
+      "name": "Equal Row and Column Pairs",
+      "slug": "equal-row-and-column-pairs",
+      "patterns": [
          "frequency-map"
       ]
    },
    {
-      "id":2390,
-      "difficulty":"Medium",
-      "name":"Removing Stars From a String",
-      "slug":"removing-stars-from-a-string",
-      "patterns":[
+      "id": 2390,
+      "difficulty": "Medium",
+      "name": "Removing Stars From a String",
+      "slug": "removing-stars-from-a-string",
+      "patterns": [
          "stack-fundamentals",
          "same-direction"
       ]
    },
    {
-      "id":2461,
-      "difficulty":"Medium",
-      "name":"Maximum Sum of Distinct Subarrays With Length K",
-      "slug":"maximum-sum-of-distinct-subarrays-with-length-k",
-      "patterns":[
+      "id": 2461,
+      "difficulty": "Medium",
+      "name": "Maximum Sum of Distinct Subarrays With Length K",
+      "slug": "maximum-sum-of-distinct-subarrays-with-length-k",
+      "patterns": [
          "fixed-size-window"
       ]
    },
    {
-      "id":2938,
-      "difficulty":"Medium",
-      "name":"Separate Black and White Balls",
-      "slug":"separate-black-and-white-balls",
-      "patterns":[
+      "id": 2938,
+      "difficulty": "Medium",
+      "name": "Separate Black and White Balls",
+      "slug": "separate-black-and-white-balls",
+      "patterns": [
          "local-optimal-choice"
       ]
    }
