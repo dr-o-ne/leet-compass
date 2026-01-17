@@ -497,6 +497,15 @@
       ]
    },
    {
+      "id": 1343,
+      "difficulty": "Medium",
+      "name": "Number of Sub-arrays of Size K and Average Greater than or Equal to Threshold",
+      "slug": "number-of-sub-arrays-of-size-k-and-average-greater-than-or-equal-to-threshold",
+      "patterns": [
+         "fixed-size-window"
+      ]
+   },
+   {
       "id": 1372,
       "difficulty": "Medium",
       "name": "Longest ZigZag Path in a Binary Tree",
