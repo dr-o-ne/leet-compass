@@ -36,10 +36,10 @@ for (int i = 0; i < k; i++)
 Process();
 
 // 2) Slide the window
-for (int left = 0, right = k; right < input.Length; right++, left++)
+for (int i = k; i < input.Length; i++)
 {
-    Add(input[right]);
-    Remove(input[left]);
+    Add(input[i]);
+    Remove(input[i - k]);
     Process();
 }
 ```
