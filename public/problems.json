@@ -218,6 +218,16 @@
       ]
    },
    {
+      "id": 239,
+      "difficulty": "Hard",
+      "name": "Sliding Window Maximum",
+      "slug": "sliding-window-maximum",
+      "patterns": [
+         "monotonic-deque",
+         "fixed-size-window"
+      ]
+   },
+   {
       "id": 283,
       "difficulty": "Easy",
       "name": "Move Zeroes",
