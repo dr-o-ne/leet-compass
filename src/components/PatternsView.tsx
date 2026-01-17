@@ -89,11 +89,17 @@ export default function PatternsView() {
         />
 
         {/* Problem counter */}
-        <div className="ml-auto flex items-center gap-1.5 text-sm text-gray-500">
-          <span className="font-semibold text-gray-900">{visibleProblems}</span>
-          <span>of</span>
-          <span>{totalProblems}</span>
-          <span>shown</span>
+        <div className="ml-auto flex items-center gap-2 px-3 py-1.5 rounded-full bg-slate-50 border border-slate-100 shadow-sm transition-all hover:border-emerald-200 hover:bg-emerald-50/50 group">
+          <div className="flex h-2 w-2 relative">
+            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+            <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+          </div>
+          <div className="flex items-center gap-1 text-[11px] font-bold text-slate-600 uppercase tracking-wider">
+            <span className="text-slate-900">{visibleProblems}</span>
+            <span className="text-[9px] opacity-40 lowercase italic font-normal px-0.5">/</span>
+            <span className="text-slate-900">{totalProblems}</span>
+            <span className="ml-1 opacity-70">Cataloged</span>
+          </div>
         </div>
       </div>
 
