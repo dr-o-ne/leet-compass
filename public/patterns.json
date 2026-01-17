@@ -88,6 +88,28 @@
       ]
    },
    {
+      "slug": "queue-deque",
+      "name": "Queue & Deque",
+      "description": "FIFO data structure and double-ended queue problems; used for sequential processing, sliding window optimizations, and breadth-first search",
+      "subpatterns": [
+         {
+            "slug": "queue-deque-fundamentals",
+            "name": "Fundamentals",
+            "description": "FIFO (First-In-First-Out) logic for sequential task processing and basic queue operations like push, pop, and peek"
+         },
+         {
+            "slug": "monotonic-deque",
+            "name": "Monotonic Deque",
+            "description": "Maintaining a deque in increasing or decreasing order to optimize finding the range max/min in O(n) time, commonly used in sliding window problems"
+         },
+         {
+            "slug": "circular-queue",
+            "name": "Circular Queue / Design",
+            "description": "Efficiently managing a fixed-size buffer using head and tail pointers to avoid memory re-allocation or handle streaming data"
+         }
+      ]
+   },
+   {
       "slug": "tree",
       "name": "Tree",
       "description": "Problems involving binary or n-ary trees, including traversal, path computation, and subtree calculations",
