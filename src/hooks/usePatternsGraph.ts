@@ -137,6 +137,15 @@ export function usePatternsGraph({
                     const slug = problemSlugMap.get(node);
                     if (slug) {
                         window.open(`https://leetcode.com/problems/${slug}`, "_blank");
+                    } else if (!node.startsWith("problem-")) {
+                        // It's a pattern or subpattern node
+                        // For sliding-window/fixed-size-window, we might want to go to sliding-window page
+                        const patternPath = node.split('/')[0];
+                        const baseUrl = import.meta.env.BASE_URL.endsWith('/')
+                            ? import.meta.env.BASE_URL
+                            : import.meta.env.BASE_URL + '/';
+
+                        window.location.href = `${baseUrl}patterns/${patternPath}`;
                     }
                 });
 
