@@ -1,9 +1,9 @@
 [
    {
-      "slug":"arrays-hashing",
-      "name":"Arrays & Hashing",
-      "description":"Problems based on arrays, hash maps, and counting techniques",
-      "subpatterns":[
+      "slug": "arrays-hashing",
+      "name": "Arrays & Hashing",
+      "description": "Problems based on arrays, hash maps, and counting techniques",
+      "subpatterns": [
          {
             "slug": "array-fundamentals",
             "name": "Fundamentals",
@@ -15,8 +15,8 @@
             "description": "Counting occurrences of elements or characters to solve problems involving duplicates, anagrams, or distributions"
          },
          {
-            "slug":"prefix-sum-product",
-            "name":"Prefix Sum / Product",
+            "slug": "prefix-sum-product",
+            "name": "Prefix Sum / Product",
             "description": "Precomputing cumulative sums or products to answer range queries or optimize subarray calculations in O(1)"
          },
          {
@@ -169,8 +169,7 @@
             "slug": "bit-manipulation",
             "name": "Bit Manipulation",
             "description": "Use bitwise operations like XOR, AND, OR, shifts to solve problems efficiently with constant space"
-         } 
+         }
       ]
    }
-   
 ]
