@@ -35,10 +35,14 @@ export default function PatternsView() {
   });
   useEffect(() => {
     async function loadData() {
+      const baseUrl = import.meta.env.BASE_URL.endsWith('/')
+        ? import.meta.env.BASE_URL.slice(0, -1)
+        : import.meta.env.BASE_URL;
+
       const [patternsRes, problemsRes, companiesRes] = await Promise.all([
-        fetch("/patterns.json"),
-        fetch("/problems.json"),
-        fetch("/companies.json"),
+        fetch(`${baseUrl}/patterns.json`),
+        fetch(`${baseUrl}/problems.json`),
+        fetch(`${baseUrl}/companies.json`),
       ]);
       const patternsData: Pattern[] = await patternsRes.json();
       const problemsData: Problem[] = await problemsRes.json();
