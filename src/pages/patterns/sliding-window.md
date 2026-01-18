@@ -5,7 +5,7 @@ layout: ../../layouts/main.astro
 
 # Sliding Window Pattern
 
-> **Move the window, not the computation**
+> **"Right in. Left out. End of story."** — *(c) JSON Statham*
 
 Sliding Window is a technique for processing contiguous subarrays (or substrings) efficiently by maintaining a window over the data and moving it step by step instead of recomputing everything from scratch.
 
