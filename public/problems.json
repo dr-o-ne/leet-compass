@@ -624,6 +624,15 @@
       ]
    },
    {
+      "id": 1984,
+      "difficulty": "Easy",
+      "name": "Minimum Difference Between Highest and Lowest of K Scores",
+      "slug": "minimum-difference-between-highest-and-lowest-of-k-scores",
+      "patterns": [
+         "fixed-size-window"
+      ]
+   },
+   {
       "id": 2215,
       "difficulty": "Easy",
       "name": "Find the Difference of Two Arrays",
