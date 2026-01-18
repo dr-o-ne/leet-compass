@@ -478,6 +478,15 @@
       ]
    },
    {
+      "id": 1052,
+      "difficulty": "Medium",
+      "name": "Grumpy Bookstore Owner",
+      "slug": "grumpy-bookstore-owner",
+      "patterns": [
+         "fixed-size-window"
+      ]
+   },
+   {
       "id": 1100,
       "difficulty": "Medium",
       "name": "Find K-Length Substrings With No Repeated Characters",
