@@ -670,6 +670,15 @@
       ]
    },
    {
+      "id": 2841,
+      "difficulty": "Medium",
+      "name": "Maximum Sum of Almost Unique Subarray",
+      "slug": "maximum-sum-of-almost-unique-subarray",
+      "patterns": [
+         "fixed-size-window"
+      ]
+   },
+   {
       "id": 2938,
       "difficulty": "Medium",
       "name": "Separate Black and White Balls",
