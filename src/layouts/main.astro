@@ -11,11 +11,12 @@ const { content } = Astro.props;
 		<title>{content.title}</title>
 	</head>
 	<body class="bg-slate-50 text-slate-900 min-h-screen flex flex-col items-center">
-		<main class="w-full max-w-4xl px-6 py-12 prose prose-slate prose-headings:text-indigo-900 prose-a:text-indigo-600 hover:prose-a:text-indigo-500 prose-code:before:content-none prose-code:after:content-none">
+		<main class="w-full max-w-4xl px-6 py-12 prose prose-slate prose-headings:text-indigo-900 prose-a:text-indigo-600 hover:prose-a:text-indigo-500 prose-code:before:content-none prose-code:after:content-none prose-blockquote:before:content-none prose-blockquote:after:content-none prose-blockquote:font-normal prose-blockquote:not-italic">
 			<slot />
 		</main>
 	</body>
 <style is:global>
+	/* Inline code styling */
 	code:not(pre code) {
 		background-color: #f1f5f9;
 		padding: 0.2em 0.4em;
@@ -23,6 +24,28 @@ const { content } = Astro.props;
 		font-weight: 500;
 		color: #4338ca;
 		border: 1px solid #e2e8f0;
+	}
+
+	/* Premium Blockquote / Alert styling */
+	blockquote {
+		background-color: #eff6ff;
+		border-left: 4px solid #3b82f6;
+		padding: 1.25rem 1.5rem !important;
+		border-radius: 0.5rem;
+		font-style: normal !important;
+		quotes: none !important;
+		margin: 2rem 0 !important;
+		color: #1e40af !important;
+		position: relative;
+	}
+
+	blockquote p {
+		margin: 0 !important;
+	}
+
+	/* Remove default Tailwind quotes */
+	blockquote::before, blockquote::after {
+		content: none !important;
 	}
 </style>
 </html>

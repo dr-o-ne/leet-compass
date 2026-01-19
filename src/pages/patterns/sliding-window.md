@@ -25,19 +25,19 @@ for (int right = 0; right < input.Length; right++)
     window.Add(input[right]);
 
     // 2. "Left out": Shrink window while the condition is violated
-    while (!window.IsValid())
+    while (left <= right && !window.IsValid())
     {
         window.Remove(input[left]);
         left++;
     }
 
     // 3. Update the global answer
-    UpdateAnswer(left, right);
+    if (window.IsValid())
+        UpdateAnswer(left, right);
 }
 ```
 
-> [!TIP]
-> To calculate the **number of elements** (size) currently in the window:  
+> 💡 **Tip:** To calculate the **number of elements** (size) currently in the window:  
 > **`size = right - left + 1`**
 
 <div style="margin-top: 3rem;">
