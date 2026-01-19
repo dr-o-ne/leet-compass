@@ -86,7 +86,7 @@
       "name": "Minimum Window Substring",
       "slug": "minimum-window-substring",
       "patterns": [
-         "variable-size-window"
+         "minimizing-window"
       ]
    },
    {
@@ -159,7 +159,7 @@
       "name": "Longest Substring with At Most Two Distinct Characters",
       "slug": "longest-substring-with-at-most-two-distinct-characters",
       "patterns": [
-         "variable-size-window"
+         "maximizing-window"
       ]
    },
    {
@@ -196,7 +196,7 @@
       "name": "Minimum Size Subarray Sum",
       "slug": "minimum-size-subarray-sum",
       "patterns": [
-         "variable-size-window"
+         "minimizing-window"
       ]
    },
    {
@@ -251,7 +251,7 @@
       "name": "Longest Substring with At Most K Distinct Characters",
       "slug": "longest-substring-with-at-most-k-distinct-characters",
       "patterns": [
-         "variable-size-window"
+         "maximizing-window"
       ]
    },
    {
@@ -298,7 +298,7 @@
       "name": "Longest Repeating Character Replacement",
       "slug": "longest-repeating-character-replacement",
       "patterns": [
-         "variable-size-window"
+         "maximizing-window"
       ]
    },
    {
@@ -401,7 +401,7 @@
       "name": "Subarray Product Less Than K",
       "slug": "subarray-product-less-than-k",
       "patterns": [
-         "variable-size-window"
+         "minimizing-window"
       ]
    },
    {
@@ -447,7 +447,7 @@
       "name": "Fruit Into Baskets",
       "slug": "fruit-into-baskets",
       "patterns": [
-         "variable-size-window"
+         "maximizing-window"
       ]
    },
    {
@@ -465,7 +465,7 @@
       "name": "Max Consecutive Ones III",
       "slug": "max-consecutive-ones-iii",
       "patterns": [
-         "variable-size-window"
+         "maximizing-window"
       ]
    },
    {
@@ -566,7 +566,7 @@
       "name": "Longest Subarray of 1's After Deleting One Element",
       "slug": "longest-subarray-of-1s-after-deleting-one-element",
       "patterns": [
-         "variable-size-window"
+         "maximizing-window"
       ]
    },
    {
@@ -584,7 +584,7 @@
       "name": "Minimum Operations to Reduce X to Zero",
       "slug": "minimum-operations-to-reduce-x-to-zero",
       "patterns": [
-         "variable-size-window"
+         "maximizing-window"
       ]
    },
    {
