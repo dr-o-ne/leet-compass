@@ -7,13 +7,45 @@ layout: ../../layouts/main.astro
 
 > **Right in. Left out. End of story.** - *(c) JSON Statham*
 
-Sliding Window is a technique for processing contiguous subarrays (or substrings) efficiently. The core principle is simple: **don’t recompute, maintain state while scanning**.
+Sliding Window is the definitive optimization for contiguous range problems. Its core mantra is simple: **reuse, don't recompute**.
 
-Instead of starting from scratch for every range, you maintain a "window" and move it step-by-step, updating only the elements that enter or leave. This reduces many brute-force solutions from **O(n²)** to **O(n)**.
+Instead of re-evaluating every range from scratch, you maintain a dynamic "window" and update it incrementally as it slides. This replaces redundant **O(n²)** nested loops with a single, high-performance **O(n)** scan.
 
-## Sliding Window Master Template
+In general, Sliding Window problems can be categorized into **3 sub-patterns**:
+1. **Fixed Size Window**
+2. **Maximum Window** (Longest valid)
+3. **Minimum Window** (Shortest valid)
 
-This universal template works for both fixed and variable-sized windows.
+## 1. Fixed Size Window
+
+Used when the window size is known in advance and remains constant.
+
+```csharp
+Window window = new();
+int left = 0;
+int fixedSize = 5;
+
+for (int right = 0; right < input.Length; right++)
+{
+    // Add element from the right
+    window.Add(input[right]);
+
+    // If window exceeds fixed size, remove element from the left
+    if (right - left + 1 > fixedSize)
+    {
+        window.Remove(input[left]);
+        left++;
+    }
+
+    // If window is full and valid — update answer
+    if (right - left + 1 == fixedSize && window.IsValid())
+        UpdateAnswer(left, right);
+}
+```
+
+## 2. Maximum (Longest) Window
+
+Used to find the longest subarray that satisfies a specific condition.
 
 ```csharp
 Window window = new();
@@ -21,23 +53,48 @@ int left = 0;
 
 for (int right = 0; right < input.Length; right++)
 {
-    // 1. "Right in": Add the new element
+    // Add element from the right
     window.Add(input[right]);
 
-    // 2. "Left out": Shrink window while the condition is violated
+    // Shrink only if the window becomes invalid
     while (left <= right && !window.IsValid())
     {
         window.Remove(input[left]);
         left++;
     }
 
-    // 3. Update the global answer
+    // Window is valid — update global maximum
     if (window.IsValid())
         UpdateAnswer(left, right);
 }
 ```
 
-> 💡 **Tip:** To calculate the **number of elements** (size) currently in the window:  
+## 3. Minimum (Shortest) Window
+
+Used to find the shortest subarray that satisfies a specific condition.
+
+```csharp
+Window window = new();
+int left = 0;
+
+for (int right = 0; right < input.Length; right++)
+{
+    // Add element from the right
+    window.Add(input[right]);
+
+    // Shrink the window as much as possible while it remains valid
+    while (left <= right && window.IsValid())
+    {
+        // While valid — update global minimum
+        UpdateAnswer(left, right);
+        
+        window.Remove(input[left]);
+        left++;
+    }
+}
+```
+
+> 💡 **Tip:** To calculate the current window size, use the formula:  
 > **`size = right - left + 1`**
 
 <div style="margin-top: 3rem;">
