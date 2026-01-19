@@ -7,83 +7,38 @@ layout: ../../layouts/main.astro
 
 > **Right in. Left out. End of story.** - *(c) JSON Statham*
 
-Sliding Window is a technique for processing contiguous subarrays (or substrings) efficiently by maintaining a window over the data and moving it step by step instead of recomputing everything from scratch.
+Sliding Window is a technique for processing contiguous subarrays (or substrings) efficiently. The core principle is simple: **don’t recompute, maintain state while scanning**.
 
-Instead of restarting work for every possible range, you reuse previous computations by:
-- **adding elements** when the window expands
-- **removing elements** when the window shrinks
+Instead of starting from scratch for every range, you maintain a "window" and move it step-by-step, updating only the elements that enter or leave. This reduces many brute-force solutions from **O(n²)** to **O(n)**.
 
-This reduces many brute-force solutions from **O(n²)** to **O(n)**.
+## Sliding Window Master Template
 
-## Core Logic
-
-A sliding window uses two pointers (`left` and `right`) to define a subarray (or substring) of the sequence. The `right` pointer expands the window by including new elements, while the `left` pointer shrinks the window by removing elements when the current window no longer satisfies the required condition. This allows efficient computation without reprocessing the entire window from scratch.
-
-## Fixed Size Sliding Window
-
-In a fixed-size window, the window length `k` remains constant. We first initialize the window by adding the first `k` elements, and then slide the window by adding one new element and removing one old element at each step.
-
-### Two-Step Implementation
-
-This traditional approach clearly separates the window into two distinct phases: first, filling the initial buffer of size `k`, and second, shifting that buffer across the rest of the collection.
+This universal template works for both fixed and variable-sized windows.
 
 ```csharp
-// 1) Initialize the first window
-for (int i = 0; i < k; i++)
+Window window = new();
+int left = 0;
+
+for (int right = 0; right < input.Length; right++)
 {
-    Add(input[i]);
-}
-Process();
+    // 1. "Right in": Add the new element
+    window.Add(input[right]);
 
-// 2) Slide the window
-for (int i = k; i < input.Length; i++)
-{
-    Add(input[i]);
-    Remove(input[i - k]);
-    Process();
-}
-```
-
-<div class="text-sm">
-
-**Pros:**
-- **Clarity**: Explicitly separates the initial window setup from the sliding logic.
-- **Simplicity**: Avoids conditional checks inside the main loops.
-
-**Cons:**
-- **Code Duplication**: Requires calling `Add()` and `Process()` in two different places.
-- **Maintenance**: Changes to the logic need to be applied to both the initialization and the sliding phase.
-
-</div>
-
-### One-Pass Implementation
-
-Alternatively, you can implement a fixed-size window in a single loop:
-
-```csharp
-for (int i = 0; i < input.Length; i++)
-{
-    Add(input[i]);
-
-    if (i >= k - 1)
+    // 2. "Left out": Shrink window while the condition is violated
+    while (!window.IsValid())
     {
-        Process();
-        Remove(input[i - k + 1]);
+        window.Remove(input[left]);
+        left++;
     }
+
+    // 3. Update the global answer
+    UpdateAnswer(left, right);
 }
 ```
 
-<div class="text-sm">
-
-**Pros:**
-- **DRY**: All logic is contained within a single loop structure.
-- **Conciseness**: Fewer lines of code and no duplicated logic calls.
-
-**Cons:**
-- **Index Math**: Calculating `i - k + 1` for removal is more prone to off-by-one errors.
-- **Conditional Overhead**: The `if` condition is checked on every single iteration.
-
-</div>
+> [!TIP]
+> To calculate the **number of elements** (size) currently in the window:  
+> **`size = right - left + 1`**
 
 <div style="margin-top: 3rem;">
     <a href="/" class="back-link">← Back to Map</a>
