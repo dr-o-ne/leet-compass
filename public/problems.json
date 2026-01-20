@@ -516,6 +516,15 @@
       ]
    },
    {
+      "id": 1176,
+      "difficulty": "Easy",
+      "name": "Diet Plan Performance",
+      "slug": "diet-plan-performance",
+      "patterns": [
+         "fixed-size-window"
+      ]
+   },
+   {
       "id": 1207,
       "difficulty": "Easy",
       "name": "Unique Number of Occurrences",
