@@ -679,6 +679,15 @@
       ]
    },
    {
+      "id": 2379,
+      "difficulty": "Easy",
+      "name": "Minimum Recolors to Get K Consecutive Black Blocks",
+      "slug": "minimum-recolors-to-get-k-consecutive-black-blocks",
+      "patterns": [
+         "fixed-size-window"
+      ]
+   },
+   {
       "id": 2390,
       "difficulty": "Medium",
       "name": "Removing Stars From a String",
