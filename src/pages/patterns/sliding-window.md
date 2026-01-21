@@ -7,16 +7,37 @@ layout: ../../layouts/main.astro
 
 > **Right in. Left out. End of story.** - *(c) JSON Statham*
 
-Sliding Window is the definitive optimization for contiguous range problems. Its core mantra is simple: **reuse, don't recompute**.
+Sliding Window is a powerful optimization for *monotonic* contiguous range problems. Its core mantra is simple: **reuse, don't recompute**. Instead of re-evaluating every range from scratch, you maintain a dynamic "window" and update it incrementally as it slides. This replaces redundant **O(n²)** nested loops with a single, high-performance **O(n)** scan.
 
-Instead of re-evaluating every range from scratch, you maintain a dynamic "window" and update it incrementally as it slides. This replaces redundant **O(n²)** nested loops with a single, high-performance **O(n)** scan.
+## Core Concepts
 
-In general, Sliding Window problems can be categorized into **3 sub-patterns**:
-1. **Fixed Size Window**
-2. **Maximum Window** (Longest valid)
-3. **Minimum Window** (Shortest valid)
+Sliding Window problems generally fall into **three sub-patterns**:
 
-## 1. Fixed Size Window
+1. **Fixed Size Sliding Window** — the window size is known and constant.  
+2. **Longest Sliding Window** — find the longest contiguous subarray/substring satisfying a condition (e.g., *at most K* constraints).  
+3. **Shortest Sliding Window** — find the shortest contiguous subarray/substring satisfying a condition (e.g., *at least K* constraints).
+
+With these sub-patterns in mind, there are two fundamental ideas to understand:
+
+### 1. Validity
+**Validity** defines whether the current window satisfies the problem constraints (e.g., `sum <= K`, `at most K distinct characters`). Only valid windows contribute to the answer. In code sample below, this is represented by a `window.IsValid()` check.
+
+### 2. Monotonicity
+**Monotonicity** is what makes Sliding Window O(n). It ensures that moving the window boundaries (`left` and `right`) has a predictable effect on validity.
+
+- **Longest Sliding Window**:  
+  - Expanding the window (`right++`) can break validity.  
+  - Once invalid, further expansion cannot restore validity until `left` moves.  
+  - Shrinking the window (`left++`) restores validity.
+
+- **Shortest Sliding Window**:  
+  - Expanding (`right++`) maintains or creates validity.  
+  - Once valid, further expansion keeps it valid.  
+  - Shrinking (`left++`) moves toward invalidity, helping find the minimum window.
+
+## Subpatterns
+
+### 1. Fixed Size Sliding Window
 
 Used when the window size is known in advance and remains constant.
 
@@ -43,7 +64,7 @@ for (int right = 0; right < input.Length; right++)
 }
 ```
 
-## 2. Maximum (Longest) Window
+### 2. Longest Sliding Window
 
 Used to find the longest subarray that satisfies a specific condition.
 
@@ -69,7 +90,7 @@ for (int right = 0; right < input.Length; right++)
 }
 ```
 
-## 3. Minimum (Shortest) Window
+### 3. Shortest Sliding Window
 
 Used to find the shortest subarray that satisfies a specific condition.
 
