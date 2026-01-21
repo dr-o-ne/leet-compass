@@ -115,6 +115,89 @@ for (int right = 0; right < input.Length; right++)
 }
 ```
 
+## Practical Example: Minimum Window Substring
+
+Let's look at a classic Hard problem — [76. Minimum Window Substring](https://leetcode.com/problems/minimum-window-substring/).
+
+At first glance, using a dedicated `Window` class in pattern might seem like overkill for this problem. However, look how it separates the **traversal logic** (the sliding boundaries) from the **state logic** (how we count characters and define validity).
+
+By encapsulating the state in a class, the main algorithm remains almost identical to the abstract "Shortest Window" template, making it easier to reason about and debug.
+
+```csharp
+private sealed class Window
+{
+    private readonly int[] template = new int[52];
+    private readonly int[] state = new int[52];    
+    private int formed = 0;
+    private int required = 0;
+    
+    public Window(string t)
+    {
+        foreach (char c in t)
+        {
+            int idx = GetIndex(c);
+            if (template[idx] == 0)
+                required++;
+            template[idx]++;
+        }
+    }
+
+    public void Add(char c)
+    {
+        int idx = GetIndex(c);
+        state[idx]++;
+        if (state[idx] == template[idx])
+            formed++;
+    }
+
+    public void Remove(char c)
+    {
+        int idx = GetIndex(c);
+        if (state[idx] == template[idx])
+            formed--;
+        state[idx]--;
+    }
+
+    public bool IsValid() => formed == required;
+
+    private int GetIndex(char c) =>
+        char.IsUpper(c) ? c - 'A' : c - 'a' + 26;
+}
+
+public string MinWindow(string s, string t)
+{
+    if (string.IsNullOrEmpty(s) || string.IsNullOrEmpty(t))
+        return "";
+
+    Window window = new(t);
+
+    int minLen = int.MaxValue;
+    int minStart = 0;
+
+    int left = 0; 
+    for (int right = 0; right < s.Length; right++)
+    {
+        window.Add(s[right]);
+
+        // Same boundary logic as the "Shortest Window" template
+        while (left <= right && window.IsValid())
+        {
+            int size = right - left + 1;
+            if (size < minLen)
+            {
+                minLen = size;
+                minStart = left;
+            }
+
+            window.Remove(s[left]);
+            left++;
+        }
+    }
+
+    return minLen == int.MaxValue ? "" : s.Substring(minStart, minLen);
+}
+```
+
 > 💡 **Tip:** To calculate the current window size, use the formula:  
 > **`size = right - left + 1`**
 
