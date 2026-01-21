@@ -571,6 +571,15 @@
       ]
    },
    {
+      "id": 1423,
+      "difficulty": "Medium",
+      "name": "Maximum Points You Can Obtain from Cards",
+      "slug": "maximum-points-you-can-obtain-from-cards",
+      "patterns": [
+         "fixed-size-sliding-window"
+      ]
+   },
+   {
       "id": 1431,
       "difficulty": "Easy",
       "name": "Kids With the Greatest Number of Candies",
