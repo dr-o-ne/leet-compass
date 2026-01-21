@@ -461,6 +461,15 @@
       ]
    },
    {
+      "id": 992,
+      "difficulty": "Hard",
+      "name": "Subarrays with K Different Integers",
+      "slug": "subarrays-with-k-different-integers",
+      "patterns": [
+         "maximizing-window"
+      ]
+   },
+   {
       "id": 994,
       "difficulty": "Medium",
       "name": "Rotting Oranges",

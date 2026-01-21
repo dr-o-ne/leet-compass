@@ -97,6 +97,9 @@ for (int right = 0; right < input.Length; right++)
 > 💡 **Tip:** To calculate the current window size, use the formula:  
 > **`size = right - left + 1`**
 
+> 💡 **Tip:** To find the result for **exactly K**, often you should calculate the difference between two "at most" results:  
+> **`exactly(K) = atMost(K) - atMost(K - 1)`**
+
 <div style="margin-top: 3rem;">
     <a href="/" class="back-link">← Back to Map</a>
 </div>
