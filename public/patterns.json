@@ -59,14 +59,14 @@
             "description": "Problems where the window length is constant; compute sums, counts, or max/min within the window"
          },
          {
+            "slug": "longest-sliding-window",
+            "name": "Longest Sliding Window",
+            "description": "Expand the window as much as possible while maintaining validity; typically used to find the longest subarray or substring satisfying a condition"
+         },
+         {
             "slug": "minimizing-window",
             "name": "Minimizing Window",
             "description": "Shrink the window as much as possible while maintaining validity; typically used to find the shortest subarray or substring satisfying a condition"
-         },
-         {
-            "slug": "maximizing-window",
-            "name": "Maximizing Window",
-            "description": "Expand the window as much as possible while maintaining validity; typically used to find the longest subarray or substring satisfying a condition"
          }
       ]
    },

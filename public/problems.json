@@ -159,7 +159,7 @@
       "name": "Longest Substring with At Most Two Distinct Characters",
       "slug": "longest-substring-with-at-most-two-distinct-characters",
       "patterns": [
-         "maximizing-window"
+         "longest-sliding-window"
       ]
    },
    {
@@ -261,7 +261,7 @@
       "name": "Longest Substring with At Most K Distinct Characters",
       "slug": "longest-substring-with-at-most-k-distinct-characters",
       "patterns": [
-         "maximizing-window"
+         "longest-sliding-window"
       ]
    },
    {
@@ -308,7 +308,7 @@
       "name": "Longest Repeating Character Replacement",
       "slug": "longest-repeating-character-replacement",
       "patterns": [
-         "maximizing-window"
+         "longest-sliding-window"
       ]
    },
    {
@@ -457,7 +457,7 @@
       "name": "Fruit Into Baskets",
       "slug": "fruit-into-baskets",
       "patterns": [
-         "maximizing-window"
+         "longest-sliding-window"
       ]
    },
    {
@@ -466,7 +466,7 @@
       "name": "Subarrays with K Different Integers",
       "slug": "subarrays-with-k-different-integers",
       "patterns": [
-         "maximizing-window"
+         "longest-sliding-window"
       ]
    },
    {
@@ -484,7 +484,7 @@
       "name": "Max Consecutive Ones III",
       "slug": "max-consecutive-ones-iii",
       "patterns": [
-         "maximizing-window"
+         "longest-sliding-window"
       ]
    },
    {
@@ -594,7 +594,7 @@
       "name": "Longest Subarray of 1's After Deleting One Element",
       "slug": "longest-subarray-of-1s-after-deleting-one-element",
       "patterns": [
-         "maximizing-window"
+         "longest-sliding-window"
       ]
    },
    {
@@ -612,7 +612,7 @@
       "name": "Minimum Operations to Reduce X to Zero",
       "slug": "minimum-operations-to-reduce-x-to-zero",
       "patterns": [
-         "maximizing-window"
+         "longest-sliding-window"
       ]
    },
    {
@@ -721,7 +721,7 @@
       "name": "Count Substrings Without Repeating Character",
       "slug": "count-substrings-without-repeating-character",
       "patterns": [
-         "maximizing-window",
+         "longest-sliding-window",
          "last-seen-index"
       ]
    },
@@ -749,7 +749,7 @@
       "name": "Count Substrings That Satisfy K-Constraint I",
       "slug": "count-substrings-that-satisfy-k-constraint-i",
       "patterns": [
-         "maximizing-window"
+         "longest-sliding-window"
       ]
    }
 ]
