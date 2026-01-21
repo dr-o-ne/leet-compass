@@ -576,7 +576,8 @@
       "name": "Maximum Points You Can Obtain from Cards",
       "slug": "maximum-points-you-can-obtain-from-cards",
       "patterns": [
-         "fixed-size-sliding-window"
+         "fixed-size-sliding-window",
+         "prefix-sum-product"
       ]
    },
    {
