@@ -544,6 +544,15 @@
       ]
    },
    {
+      "id": 1297,
+      "difficulty": "Medium",
+      "name": "Maximum Number of Occurrences of a Substring",
+      "slug": "maximum-number-of-occurrences-of-a-substring",
+      "patterns": [
+         "longest-sliding-window"
+      ]
+   },
+   {
       "id": 1343,
       "difficulty": "Medium",
       "name": "Number of Sub-arrays of Size K and Average Greater than or Equal to Threshold",
