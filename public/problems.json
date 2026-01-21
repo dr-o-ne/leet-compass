@@ -716,6 +716,16 @@
       ]
    },
    {
+      "id": 2743,
+      "difficulty": "Medium",
+      "name": "Count Substrings Without Repeating Character",
+      "slug": "count-substrings-without-repeating-character",
+      "patterns": [
+         "maximizing-window",
+         "last-seen-index"
+      ]
+   },
+   {
       "id": 2841,
       "difficulty": "Medium",
       "name": "Maximum Sum of Almost Unique Subarray",
