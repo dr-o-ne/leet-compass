@@ -723,5 +723,14 @@
       "patterns": [
          "local-optimal-choice"
       ]
+   },
+   {
+      "id": 3258,
+      "difficulty": "Easy",
+      "name": "Count Substrings That Satisfy K-Constraint I",
+      "slug": "count-substrings-that-satisfy-k-constraint-i",
+      "patterns": [
+         "maximizing-window"
+      ]
    }
 ]
