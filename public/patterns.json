@@ -64,8 +64,8 @@
             "description": "Expand the window as much as possible while maintaining validity; typically used to find the longest subarray or substring satisfying a condition"
          },
          {
-            "slug": "minimizing-window",
-            "name": "Minimizing Window",
+            "slug": "shortest-sliding-window",
+            "name": "Shortest Sliding Window",
             "description": "Shrink the window as much as possible while maintaining validity; typically used to find the shortest subarray or substring satisfying a condition"
          }
       ]

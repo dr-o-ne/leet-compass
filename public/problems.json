@@ -86,7 +86,7 @@
       "name": "Minimum Window Substring",
       "slug": "minimum-window-substring",
       "patterns": [
-         "minimizing-window"
+         "shortest-sliding-window"
       ]
    },
    {
@@ -196,7 +196,7 @@
       "name": "Minimum Size Subarray Sum",
       "slug": "minimum-size-subarray-sum",
       "patterns": [
-         "minimizing-window"
+         "shortest-sliding-window"
       ]
    },
    {
@@ -411,7 +411,7 @@
       "name": "Subarray Product Less Than K",
       "slug": "subarray-product-less-than-k",
       "patterns": [
-         "minimizing-window"
+         "shortest-sliding-window"
       ]
    },
    {
