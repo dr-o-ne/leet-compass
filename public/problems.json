@@ -109,6 +109,15 @@
       ]
    },
    {
+      "id": 108,
+      "difficulty": "Easy",
+      "name": "Convert Sorted Array to Binary Search Tree",
+      "slug": "convert-sorted-array-to-binary-search-tree",
+      "patterns": [
+         "binary-search-tree"
+      ]
+   },
+   {
       "id": 125,
       "difficulty": "Easy",
       "name": "Valid Palindrome",
