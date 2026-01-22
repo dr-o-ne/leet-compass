@@ -7,15 +7,15 @@ layout: ../../layouts/main.astro
 
 > **Right in. Left out. End of story.** - *(c) JSON Statham*
 
-Sliding Window is a powerful optimization for *monotonic* contiguous range problems. Its core mantra is simple: **reuse, don't recompute**. Instead of re-evaluating every range from scratch, you maintain a dynamic "window" and update it incrementally as it slides. This replaces redundant **O(n²)** nested loops with a single, high-performance **O(n)** scan.
+Sliding Window is used for problems where subarrays are processed sequentially, and changing the boundaries predictably affects the condition. Its core mantra is simple: **reuse, don't recompute**. Instead of re-evaluating every range from scratch, you maintain a dynamic "window" and update it incrementally as it slides. This usually replaces **O(n²)** nested loops with a single **O(n)** scan.
 
 ## Core Concepts
 
 Sliding Window problems generally fall into **three sub-patterns**:
 
-1. **Fixed Size Sliding Window** — the window size is known and constant.  
-2. **Longest Sliding Window** — find the longest contiguous subarray/substring satisfying a condition (e.g., *at most K* constraints).  
-3. **Shortest Sliding Window** — find the shortest contiguous subarray/substring satisfying a condition (e.g., *at least K* constraints).
+1. **Fixed Size Sliding Window** - the window size is known and constant.  
+2. **Longest Sliding Window** - find the longest contiguous subarray/substring satisfying a condition (e.g., *at most K* constraints).  
+3. **Shortest Sliding Window** - find the shortest contiguous subarray/substring satisfying a condition (e.g., *at least K* constraints).
 
 With these sub-patterns in mind, there are two fundamental ideas to understand:
 
@@ -51,14 +51,14 @@ for (int right = 0; right < input.Length; right++)
     // Add element from the right
     window.Add(input[right]);
 
-    // If window exceeds fixed size, remove element from the left
+    // Remove element from the left if window is too big
     if (right - left + 1 > fixedSize)
     {
         window.Remove(input[left]);
         left++;
     }
 
-    // If window is full and valid — update answer
+    // If window is full and valid - update answer
     if (right - left + 1 == fixedSize && window.IsValid())
         UpdateAnswer(left, right);
 }
@@ -84,7 +84,7 @@ for (int right = 0; right < input.Length; right++)
         left++;
     }
 
-    // Window is valid — update global maximum
+    // Window is valid - update global maximum
     if (window.IsValid())
         UpdateAnswer(left, right);
 }
@@ -106,7 +106,7 @@ for (int right = 0; right < input.Length; right++)
     // Shrink the window as much as possible while it remains valid
     while (left <= right && window.IsValid())
     {
-        // While valid — update global minimum
+        // While valid - update global minimum
         UpdateAnswer(left, right);
         
         window.Remove(input[left]);
@@ -115,9 +115,11 @@ for (int right = 0; right < input.Length; right++)
 }
 ```
 
+These are patterns, not prescriptions - use them as guidance, not as rigid templates
+
 ## Practical Example: Minimum Window Substring
 
-Let's look at a classic Hard problem — [76. Minimum Window Substring](https://leetcode.com/problems/minimum-window-substring/).
+Let's look at a classic Hard problem - [76. Minimum Window Substring](https://leetcode.com/problems/minimum-window-substring/).
 
 At first glance, using a dedicated `Window` class in pattern might seem like overkill for this problem. However, look how it separates the **traversal logic** (the sliding boundaries) from the **state logic** (how we count characters and define validity).
 

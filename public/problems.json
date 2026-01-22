@@ -248,6 +248,16 @@
       ]
    },
    {
+      "id": 295,
+      "difficulty": "Hard",
+      "name": "Find Median from Data Stream",
+      "slug": "find-median-from-data-stream",
+      "patterns": [
+         "classic-ds-design",
+         "priority-queue"
+      ]
+   },
+   {
       "id": 334,
       "difficulty": "Medium",
       "name": "Increasing Triplet Subsequence",

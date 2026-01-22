@@ -111,6 +111,11 @@
             "slug": "circular-queue",
             "name": "Circular Queue / Design",
             "description": "Efficiently managing a fixed-size buffer using head and tail pointers to avoid memory re-allocation or handle streaming data"
+         },
+         {
+            "slug": "priority-queue",
+            "name": "Priority Queue / Heap",
+            "description": "Queue where each element has a priority; supports efficiently extracting the min or max element, and commonly used for top-k, median, or greedy selection problems"
          }
       ]
    },
