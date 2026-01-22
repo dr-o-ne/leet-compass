@@ -64,7 +64,7 @@ export function usePatternsGraph({
                 graph.addNode(patternId, {
                     x: radius * Math.cos(angle),
                     y: radius * Math.sin(angle),
-                    size: 16,
+                    size: 12,
                     label: pattern.name,
                     color: "#6366f1",
                 });
@@ -78,7 +78,7 @@ export function usePatternsGraph({
                     graph.addNode(subId, {
                         x: subRadius * Math.cos(subAngle),
                         y: subRadius * Math.sin(subAngle),
-                        size: 12,
+                        size: 8,
                         label: sub.name,
                         color: "#a5b4fc",
                     });
