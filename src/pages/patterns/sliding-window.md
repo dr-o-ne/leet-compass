@@ -207,7 +207,7 @@ public string MinWindow(string s, string t)
 > **`exactly(K) = atMost(K) - atMost(K - 1)`**
 
 <div style="margin-top: 3rem;">
-    <a href="/" class="back-link">← Back to Map</a>
+    <a href="/leet-compass/" class="back-link">← Back to Map</a>
 </div>
 
 <style>
