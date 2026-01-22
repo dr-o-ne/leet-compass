@@ -370,6 +370,15 @@
       ]
    },
    {
+      "id": 560,
+      "difficulty": "Medium",
+      "name": "Subarray Sum Equals K",
+      "slug": "subarray-sum-equals-k",
+      "patterns": [
+         "prefix-sum-product"
+      ]
+   },
+   {
       "id": 567,
       "difficulty": "Medium",
       "name": "Permutation in String",
