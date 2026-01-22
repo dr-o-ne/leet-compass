@@ -526,6 +526,15 @@
       ]
    },
    {
+      "id": 1137,
+      "difficulty": "Easy",
+      "name": "N-th Tribonacci Number",
+      "slug": "n-th-tribonacci-number",
+      "patterns": [
+         "dp-1d-linear"
+      ]
+   },
+   {
       "id": 1161,
       "difficulty": "Medium",
       "name": "Maximum Level Sum of a Binary Tree",
