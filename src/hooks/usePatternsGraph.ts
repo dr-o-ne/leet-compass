@@ -11,6 +11,7 @@ interface UsePatternsGraphProps {
     searchQuery: string;
     selectedCompany: string;
     hoveredNode: string | null;
+    showPatterns: boolean;
     setHoveredNode: (node: string | null) => void;
     setVisibleProblems: (count: number) => void;
     setLoading: (loading: boolean) => void;
@@ -25,6 +26,7 @@ export function usePatternsGraph({
     searchQuery,
     selectedCompany,
     hoveredNode,
+    showPatterns,
     setHoveredNode,
     setVisibleProblems,
     setLoading,
@@ -117,7 +119,7 @@ export function usePatternsGraph({
             });
 
             forceAtlas2.assign(graph, {
-                iterations: 100,
+                iterations: 50,
                 settings: {
                     scalingRatio: 1,
                     gravity: 1,
@@ -182,7 +184,9 @@ export function usePatternsGraph({
             // 1. Determine visibility first
             let isHidden = false;
             if (!node.startsWith("problem-")) {
-                if (selectedPattern) {
+                if (!showPatterns) {
+                    isHidden = true;
+                } else if (selectedPattern) {
                     if (isParentFilter) {
                         if (!node.startsWith(filterSlug)) {
                             isHidden = true;
@@ -245,8 +249,13 @@ export function usePatternsGraph({
                 const isConnectedProblem = graph.hasEdge(node, hoveredNode) || graph.hasEdge(hoveredNode, node);
 
                 if (isHoveredNode || isSubpattern || isParentPattern || isConnectedProblem) {
-                    return { ...data, zIndex: 1, highlighted: true };
-                } else {
+                    return {
+                        ...data,
+                        zIndex: 1,
+                        highlighted: true,
+                        size: (data.size || 5) * 1.5
+                    };
+                } else if (!hoveredNode.startsWith("problem-")) {
                     return { ...data, color: "#e5e7eb", zIndex: 0 };
                 }
             }
@@ -271,6 +280,7 @@ export function usePatternsGraph({
             if (hoveredNode) {
                 const isConnected = source === hoveredNode || target === hoveredNode;
                 if (!isConnected) {
+                    if (hoveredNode.startsWith("problem-")) return data;
                     return { ...data, color: "#e5e7eb", zIndex: 0 };
                 }
                 return { ...data, zIndex: 1 };
@@ -293,7 +303,7 @@ export function usePatternsGraph({
             });
             setVisibleProblems(count);
         }
-    }, [selectedDifficulties, selectedPattern, patterns, searchQuery, selectedCompany, companies, hoveredNode]);
+    }, [selectedDifficulties, selectedPattern, patterns, searchQuery, selectedCompany, companies, hoveredNode, showPatterns]);
 
     return { containerRef };
 }
