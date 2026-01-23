@@ -16,6 +16,27 @@ Inspired by https://labuladong.online/en/
 
 ---
 
+## How to Contribute
+
+Contributions are welcome! Here’s how you can help improve the catalog:
+
+### Patterns
+1. Open the `patterns.json` file. It contains all patterns and sub-patterns.  
+2. Add a new entry if you think a pattern or sub-pattern is missing.  
+3. Make sure it makes sense to create a separate sub-pattern rather than merging with an existing one.  
+
+### Problems
+1. Open the `problems.json` file. It contains all cataloged problems.  
+2. Add or update the `patterns` for a problem that can be solved using a specific sub-pattern, or for which a sub-pattern is important for its optimal solution.  
+3. Prefer adding only the sub-patterns that contribute to the best or most optimal solution for the problem.  
+
+4. Submit a pull request with your additions or improvements.  
+
+Please keep entries clear and consistent, and make sure they fit the existing structure.
+
+---
+
 ## Status
 
 Work in progress
+
