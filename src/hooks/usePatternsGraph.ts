@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useMemo } from "react";
 import type { Company, Pattern, Problem } from "../types/graph";
 import { difficultyColors, hashToPosition } from "../utils/graph";
 
@@ -172,14 +172,38 @@ export function usePatternsGraph({
         };
     }, [patterns, problems]); // Re-run if data changes initially
 
+    const filterInfo = useMemo(() => {
+        const isParentFilter = selectedPattern.startsWith("parent:");
+        const filterSlug = isParentFilter ? selectedPattern.replace("parent:", "") : selectedPattern;
+
+        let subpatternParent: string | undefined;
+        if (selectedPattern && !isParentFilter) {
+            subpatternParent = patterns.find(p =>
+                p.subpatterns.some(s => s.slug === filterSlug)
+            )?.slug;
+        }
+
+        let subSlugs: string[] = [];
+        if (selectedPattern && isParentFilter) {
+            const parentPattern = patterns.find(p => p.slug === filterSlug);
+            subSlugs = parentPattern?.subpatterns.map(s => s.slug) || [];
+        }
+
+        return { isParentFilter, filterSlug, subpatternParent, subSlugs };
+    }, [selectedPattern, patterns]);
+
+    const targetCompany = useMemo(() => {
+        if (!selectedCompany) return null;
+        return companies.find(c => c.name === selectedCompany) || null;
+    }, [selectedCompany, companies]);
+
     useEffect(() => {
         const renderer = rendererRef.current;
         const graph = graphRef.current;
         if (!renderer) return;
 
         renderer.setSetting("nodeReducer", (node: string, data: any) => {
-            const isParentFilter = selectedPattern.startsWith("parent:");
-            const filterSlug = isParentFilter ? selectedPattern.replace("parent:", "") : selectedPattern;
+            const { isParentFilter, filterSlug, subpatternParent, subSlugs } = filterInfo;
 
             // 1. Determine visibility first
             let isHidden = false;
@@ -191,16 +215,9 @@ export function usePatternsGraph({
                         if (!node.startsWith(filterSlug)) {
                             isHidden = true;
                         }
-                    } else {
-                        const subpatternParent = patterns.find(p =>
-                            p.subpatterns.some(s => s.slug === filterSlug)
-                        )?.slug;
-
-                        if (node.includes(filterSlug) || node === subpatternParent) {
-                            // Keep visible
-                        } else {
-                            isHidden = true;
-                        }
+                    } else if (node !== filterSlug && node !== subpatternParent) {
+                        // Keep visible if it's the exact match or its parent
+                        isHidden = true;
                     }
                 }
             } else {
@@ -217,15 +234,12 @@ export function usePatternsGraph({
                             isHidden = true;
                         }
                     } else if (selectedCompany) {
-                        const company = companies.find(c => c.name === selectedCompany);
                         const problemId = parseInt(node.replace("problem-", ""));
-                        if (company && !company.problems.includes(problemId)) {
+                        if (targetCompany && !targetCompany.problems.includes(problemId)) {
                             isHidden = true;
                         }
                     } else if (selectedPattern) {
                         if (isParentFilter) {
-                            const parentPattern = patterns.find(p => p.slug === filterSlug);
-                            const subSlugs = parentPattern?.subpatterns.map(s => s.slug) || [];
                             const hasMatch = problemInfo.patterns.some(p => subSlugs.includes(p));
                             if (!hasMatch) {
                                 isHidden = true;
@@ -303,7 +317,7 @@ export function usePatternsGraph({
             });
             setVisibleProblems(count);
         }
-    }, [selectedDifficulties, selectedPattern, patterns, searchQuery, selectedCompany, companies, hoveredNode, showPatterns]);
+    }, [selectedDifficulties, selectedPattern, patterns, searchQuery, selectedCompany, companies, hoveredNode, showPatterns, filterInfo, targetCompany]);
 
     return { containerRef };
 }
