@@ -74,7 +74,7 @@ export default function PatternsView() {
   return (
     <div className="w-full h-full flex flex-col">
       {/* Filter panel */}
-      <div className="px-4 py-3 bg-white border-b border-gray-200 flex items-center gap-6 flex-wrap">
+      <div className="px-4 py-3 bg-white border-b border-gray-200 flex items-center justify-center gap-6 flex-wrap">
         <DifficultyFilter
           selectedDifficulties={selectedDifficulties}
           toggleDifficulty={toggleDifficulty}
@@ -107,7 +107,7 @@ export default function PatternsView() {
         </label>
 
         {/* Problem counter */}
-        <div className="ml-auto flex items-center gap-2 px-3 py-1.5 rounded-full bg-slate-50 border border-slate-100 shadow-sm transition-all hover:border-emerald-200 hover:bg-emerald-50/50 group">
+        <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-slate-50 border border-slate-100 shadow-sm transition-all hover:border-emerald-200 hover:bg-emerald-50/50 group">
           <div className="flex h-2 w-2 relative">
             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
             <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
@@ -116,7 +116,7 @@ export default function PatternsView() {
             <span className="text-slate-900">{visibleProblems}</span>
             <span className="text-[9px] opacity-40 lowercase italic font-normal px-0.5">/</span>
             <span className="text-slate-900">{totalProblems}</span>
-            <span className="ml-1 opacity-70">Cataloged</span>
+            <span className="ml-1 opacity-70">Shown</span>
           </div>
         </div>
       </div>

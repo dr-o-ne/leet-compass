@@ -44,7 +44,8 @@ export default function CompanyFilter({
                     setCompanyDropdownOpen(true);
                 }}
                 onFocus={() => setCompanyDropdownOpen(true)}
-                className="h-9 w-44 px-3 rounded-lg border border-gray-200 bg-white text-sm text-gray-900 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent transition-shadow"
+                className={`h-9 w-44 px-3 rounded-lg border border-gray-200 bg-white text-sm text-gray-900 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent transition-shadow ${selectedCompany && !companySearch ? "placeholder:text-gray-900" : "placeholder:text-gray-400"
+                    }`}
             />
             {selectedCompany && (
                 <button
