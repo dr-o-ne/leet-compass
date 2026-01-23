@@ -62,16 +62,28 @@ export function usePatternsGraph({
                 const patternId = pattern.slug;
                 const angle = (2 * Math.PI * patternIndex) / patterns.length;
                 const radius = 100;
+                subSlugToFullId.set(patternId, patternId);
+
+                let x = radius * Math.cos(angle);
+                let y = radius * Math.sin(angle);
+                let fixed = false;
+
+                if (patternId === 'db') {
+                    x = 2000;
+                    y = 1000;
+                    fixed = true;
+                }
 
                 graph.addNode(patternId, {
-                    x: radius * Math.cos(angle),
-                    y: radius * Math.sin(angle),
+                    x,
+                    y,
                     size: 12,
                     label: pattern.name,
                     color: "#6366f1",
+                    fixed
                 });
 
-                pattern.subpatterns.forEach((sub, subIndex) => {
+                pattern.subpatterns?.forEach((sub, subIndex) => {
                     const subId = `${pattern.slug}/${sub.slug}`;
                     subSlugToFullId.set(sub.slug, subId);
                     const subRadius = radius + 50;
@@ -121,9 +133,12 @@ export function usePatternsGraph({
             forceAtlas2.assign(graph, {
                 iterations: 50,
                 settings: {
-                    scalingRatio: 1,
-                    gravity: 1,
-                },
+                    scalingRatio: 1000,
+                    gravity: 0,
+                    //adjustSizes: true,
+                    linLogMode: true,
+                    barnesHutOptimize: true
+                }
             });
 
             if (containerRef.current) {
@@ -179,14 +194,15 @@ export function usePatternsGraph({
         let subpatternParent: string | undefined;
         if (selectedPattern && !isParentFilter) {
             subpatternParent = patterns.find(p =>
-                p.subpatterns.some(s => s.slug === filterSlug)
+                p.subpatterns?.some(s => s.slug === filterSlug)
             )?.slug;
         }
 
         let subSlugs: string[] = [];
         if (selectedPattern && isParentFilter) {
             const parentPattern = patterns.find(p => p.slug === filterSlug);
-            subSlugs = parentPattern?.subpatterns.map(s => s.slug) || [];
+            const childSlugs = parentPattern?.subpatterns?.map(s => s.slug) || [];
+            subSlugs = [filterSlug, ...childSlugs];
         }
 
         return { isParentFilter, filterSlug, subpatternParent, subSlugs };

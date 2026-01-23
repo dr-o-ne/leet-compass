@@ -22,7 +22,7 @@ export default function PatternSelect({
             {patterns.map((pattern) => (
                 <React.Fragment key={pattern.slug}>
                     <option value={`parent:${pattern.slug}`}>{pattern.name}</option>
-                    {pattern.subpatterns.map((sub) => (
+                    {pattern.subpatterns?.map((sub) => (
                         <option key={sub.slug} value={sub.slug}>
                             &nbsp;&nbsp;{sub.name}
                         </option>

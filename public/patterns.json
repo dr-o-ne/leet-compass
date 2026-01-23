@@ -220,5 +220,10 @@
             "description": "Use bitwise operations like XOR, AND, OR, shifts to solve problems efficiently with constant space"
          }
       ]
+   },
+   {
+      "slug": "db",
+      "name": "Database",
+      "description": "SQL database queries and operations"
    }
 ]

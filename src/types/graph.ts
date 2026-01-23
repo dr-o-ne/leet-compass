@@ -7,7 +7,7 @@ export interface Pattern {
   slug: string;
   name: string;
   description: string;
-  subpatterns: Subpattern[];
+  subpatterns?: Subpattern[];
 }
 
 export interface Problem {
