@@ -198,18 +198,6 @@
       ]
    },
    {
-      "slug": "math",
-      "name": "Math",
-      "description": "Problems involving number theory, arithmetic, and bitwise operations to solve problems efficiently",
-      "subpatterns": [
-         {
-            "slug": "bit-manipulation",
-            "name": "Bit Manipulation",
-            "description": "Use bitwise operations like XOR, AND, OR, shifts to solve problems efficiently with constant space"
-         }
-      ]
-   },
-   {
       "slug": "dynamic-programming",
       "name": "Dynamic Programming",
       "description": "Problems solved by breaking them into overlapping subproblems and reusing previously computed results to optimize time complexity",
@@ -218,6 +206,18 @@
             "slug": "dp-1d-linear",
             "name": "1D Linear DP",
             "description": "Problems where the state depends on previous indices in a linear order; typically dp[i] depends on dp[i-1], dp[i-2], etc. Example: Fibonacci, Tribonacci, Climbing Stairs"
+         }
+      ]
+   },
+   {
+      "slug": "math",
+      "name": "Math",
+      "description": "Problems involving number theory, arithmetic, and bitwise operations to solve problems efficiently",
+      "subpatterns": [
+         {
+            "slug": "bit-manipulation",
+            "name": "Bit Manipulation",
+            "description": "Use bitwise operations like XOR, AND, OR, shifts to solve problems efficiently with constant space"
          }
       ]
    }

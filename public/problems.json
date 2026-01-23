@@ -14684,7 +14684,9 @@
       "difficulty": "Easy",
       "name": "Time Needed to Buy Tickets",
       "slug": "time-needed-to-buy-tickets",
-      "patterns": []
+      "patterns": [
+         "array-fundamentals"
+      ]
    },
    {
       "id": 2074,
