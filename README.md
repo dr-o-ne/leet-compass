@@ -30,13 +30,12 @@ Contributions are welcome! Here’s how you can help improve the catalog:
 2. Add or update the `patterns` for a problem that can be solved using a specific sub-pattern, or for which a sub-pattern is important for its optimal solution.  
 3. Prefer adding only the sub-patterns that contribute to the best or most optimal solution for the problem.  
 
-4. Submit a pull request with your additions or improvements.  
-
-Please keep entries clear and consistent, and make sure they fit the existing structure.
+Submit a pull request with your additions or improvements
 
 ---
 
 ## Status
 
 Work in progress
+
 
