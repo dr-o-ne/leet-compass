@@ -9234,7 +9234,9 @@
       "difficulty": "Medium",
       "name": "Find the Start and End Number of Continuous Ranges",
       "slug": "find-the-start-and-end-number-of-continuous-ranges",
-      "patterns": []
+      "patterns": [
+         "db"
+      ]
    },
    {
       "id": 1286,
