@@ -6299,7 +6299,9 @@
       "difficulty": "Medium",
       "name": "Koko Eating Bananas",
       "slug": "koko-eating-bananas",
-      "patterns": []
+      "patterns": [
+         "binary-search"
+      ]
    },
    {
       "id": 876,

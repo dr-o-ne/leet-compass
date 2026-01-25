@@ -71,6 +71,11 @@
       ]
    },
    {
+      "slug": "binary-search",
+      "name": "Binary Search",
+      "description": "Divide search space in half using monotonic property"
+   },
+   {
       "slug": "stack",
       "name": "Stack",
       "description": "LIFO data structure problems; used for sequential processing, undo-like logic, expression evaluation, and optimization",
