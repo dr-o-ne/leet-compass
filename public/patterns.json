@@ -42,9 +42,9 @@
             "description": "Both pointers move forward; often a slow/fast pointer setup for deduplication, filtering, partitioning, or window-like optimizations"
          },
          {
-            "slug": "merge-two-arrays",
-            "name": "Merging / Two Arrays Traversal",
-            "description": "Two pointers iterate over two arrays to merge, combine, or compute relations; used in merge, intersection, union, or pair-sum problems"
+            "slug": "two-arrays",
+            "name": "Two Arrays Traversal",
+            "description": "Two pointers iterate over two separate arrays to combine, compare, or compute relationships between elements; used for counting pairs, intersections, unions, or range-based relations"
          }
       ]
    },

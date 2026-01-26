@@ -637,7 +637,7 @@
       "name": "Merge Sorted Array",
       "slug": "merge-sorted-array",
       "patterns": [
-         "merge-two-arrays"
+         "two-arrays"
       ]
    },
    {
@@ -16476,7 +16476,9 @@
       "name": "Successful Pairs of Spells and Potions",
       "slug": "successful-pairs-of-spells-and-potions",
       "patterns": [
-         "binary-search"
+         "binary-search",
+         "two-arrays",
+         "prefix-sum-product"
       ]
    },
    {
