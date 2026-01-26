@@ -7263,7 +7263,9 @@
       "difficulty": "Medium",
       "name": "Capacity To Ship Packages Within D Days",
       "slug": "capacity-to-ship-packages-within-d-days",
-      "patterns": []
+      "patterns": [
+         "binary-search"
+      ]
    },
    {
       "id": 1012,
