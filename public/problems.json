@@ -16475,7 +16475,9 @@
       "difficulty": "Medium",
       "name": "Successful Pairs of Spells and Potions",
       "slug": "successful-pairs-of-spells-and-potions",
-      "patterns": []
+      "patterns": [
+         "binary-search"
+      ]
    },
    {
       "id": 2301,
