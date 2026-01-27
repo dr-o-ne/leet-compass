@@ -252,7 +252,9 @@
       "difficulty": "Medium",
       "name": "Find First and Last Position of Element in Sorted Array",
       "slug": "find-first-and-last-position-of-element-in-sorted-array",
-      "patterns": []
+      "patterns": [
+         "binary-search"
+      ]
    },
    {
       "id": 35,
