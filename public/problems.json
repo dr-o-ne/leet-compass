@@ -12716,7 +12716,9 @@
       "difficulty": "Hard",
       "name": "Find the Subtasks That Did Not Execute",
       "slug": "find-the-subtasks-that-did-not-execute",
-      "patterns": []
+      "patterns": [
+         "db"
+      ]
    },
    {
       "id": 1768,
