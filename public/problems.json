@@ -8814,7 +8814,9 @@
       "difficulty": "Hard",
       "name": "Report Contiguous Dates",
       "slug": "report-contiguous-dates",
-      "patterns": []
+      "patterns": [
+         "db"
+      ]
    },
    {
       "id": 1226,
