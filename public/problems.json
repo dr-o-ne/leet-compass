@@ -245,7 +245,9 @@
       "difficulty": "Medium",
       "name": "Search in Rotated Sorted Array",
       "slug": "search-in-rotated-sorted-array",
-      "patterns": []
+      "patterns": [
+         "binary-search"
+      ]
    },
    {
       "id": 34,
