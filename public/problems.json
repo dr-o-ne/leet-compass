@@ -4091,7 +4091,9 @@
       "difficulty": "Easy",
       "name": "Reshape the Matrix",
       "slug": "reshape-the-matrix",
-      "patterns": []
+      "patterns": [
+         "matrix"
+      ]
    },
    {
       "id": 567,

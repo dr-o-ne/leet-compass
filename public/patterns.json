@@ -23,6 +23,11 @@
             "slug": "last-seen-index",
             "name": "Last Seen Index / Position Tracking",
             "description": "Tracking last occurrence index to reason about distance, order, or uniqueness"
+         },
+         {
+            "slug": "matrix",
+            "name": "Matrix",
+            "description": "Working with 2D arrays: row/column access, bounds handling, and basic traversal patterns"
          }
       ]
    },
