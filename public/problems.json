@@ -1173,7 +1173,9 @@
       "difficulty": "Medium",
       "name": "Find Peak Element",
       "slug": "find-peak-element",
-      "patterns": []
+      "patterns": [
+         "binary-search"
+      ]
    },
    {
       "id": 163,
@@ -6142,7 +6144,9 @@
       "difficulty": "Medium",
       "name": "Peak Index in a Mountain Array",
       "slug": "peak-index-in-a-mountain-array",
-      "patterns": []
+      "patterns": [
+         "binary-search"
+      ]
    },
    {
       "id": 853,
