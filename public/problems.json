@@ -4785,7 +4785,10 @@
       "difficulty": "Medium",
       "name": "Find K Closest Elements",
       "slug": "find-k-closest-elements",
-      "patterns": []
+      "patterns": [
+         "binary-search",
+         "two-pointers"
+      ]
    },
    {
       "id": 659,
