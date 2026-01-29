@@ -1107,7 +1107,9 @@
       "difficulty": "Medium",
       "name": "Find Minimum in Rotated Sorted Array",
       "slug": "find-minimum-in-rotated-sorted-array",
-      "patterns": []
+      "patterns": [
+         "binary-search"
+      ]
    },
    {
       "id": 154,
