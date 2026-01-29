@@ -198,6 +198,16 @@ export function usePatternsGraph({
             )?.slug;
         }
 
+        let fullSelectedId: string | undefined;
+        if (selectedPattern && !isParentFilter) {
+            const parent = patterns.find(p =>
+                p.subpatterns?.some(s => s.slug === filterSlug)
+            );
+            if (parent) {
+                fullSelectedId = `${parent.slug}/${filterSlug}`;
+            }
+        }
+
         let subSlugs: string[] = [];
         if (selectedPattern && isParentFilter) {
             const parentPattern = patterns.find(p => p.slug === filterSlug);
@@ -205,7 +215,7 @@ export function usePatternsGraph({
             subSlugs = [filterSlug, ...childSlugs];
         }
 
-        return { isParentFilter, filterSlug, subpatternParent, subSlugs };
+        return { isParentFilter, filterSlug, subpatternParent, subSlugs, fullSelectedId };
     }, [selectedPattern, patterns]);
 
     const targetCompany = useMemo(() => {
@@ -219,7 +229,7 @@ export function usePatternsGraph({
         if (!renderer) return;
 
         renderer.setSetting("nodeReducer", (node: string, data: any) => {
-            const { isParentFilter, filterSlug, subpatternParent, subSlugs } = filterInfo;
+            const { isParentFilter, filterSlug, subpatternParent, subSlugs, fullSelectedId } = filterInfo;
 
             // 1. Determine visibility first
             let isHidden = false;
@@ -231,7 +241,7 @@ export function usePatternsGraph({
                         if (!node.startsWith(filterSlug)) {
                             isHidden = true;
                         }
-                    } else if (node !== filterSlug && node !== subpatternParent) {
+                    } else if (node !== filterSlug && node !== subpatternParent && node !== fullSelectedId) {
                         // Keep visible if it's the exact match or its parent
                         isHidden = true;
                     }
