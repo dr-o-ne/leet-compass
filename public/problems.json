@@ -2030,7 +2030,9 @@
       "difficulty": "Easy",
       "name": "First Bad Version",
       "slug": "first-bad-version",
-      "patterns": []
+      "patterns": [
+         "binary-search"
+      ]
    },
    {
       "id": 279,
