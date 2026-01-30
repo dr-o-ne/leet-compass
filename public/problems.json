@@ -5737,7 +5737,9 @@
       "difficulty": "Medium",
       "name": "Number of Matching Subsequences",
       "slug": "number-of-matching-subsequences",
-      "patterns": []
+      "patterns": [
+         "binary-search"
+      ]
    },
    {
       "id": 793,
