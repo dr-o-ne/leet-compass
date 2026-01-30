@@ -2675,7 +2675,9 @@
       "difficulty": "Easy",
       "name": "Valid Perfect Square",
       "slug": "valid-perfect-square",
-      "patterns": []
+      "patterns": [
+         "binary-search"
+      ]
    },
    {
       "id": 368,
