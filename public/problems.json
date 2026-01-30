@@ -263,7 +263,9 @@
       "difficulty": "Easy",
       "name": "Search Insert Position",
       "slug": "search-insert-position",
-      "patterns": []
+      "patterns": [
+         "binary-search"
+      ]
    },
    {
       "id": 36,
