@@ -1767,7 +1767,9 @@
       "difficulty": "Medium",
       "name": "Search a 2D Matrix II",
       "slug": "search-a-2d-matrix-ii",
-      "patterns": []
+      "patterns": [
+         "matrix"
+      ]
    },
    {
       "id": 241,
