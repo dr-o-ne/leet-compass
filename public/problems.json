@@ -538,7 +538,10 @@
       "difficulty": "Medium",
       "name": "Search a 2D Matrix",
       "slug": "search-a-2d-matrix",
-      "patterns": []
+      "patterns": [
+         "matrix",
+         "binary-search"
+      ]
    },
    {
       "id": 75,
