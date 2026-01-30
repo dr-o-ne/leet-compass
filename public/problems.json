@@ -5405,7 +5405,9 @@
       "difficulty": "Easy",
       "name": "Find Smallest Letter Greater Than Target",
       "slug": "find-smallest-letter-greater-than-target",
-      "patterns": []
+      "patterns": [
+         "binary-search"
+      ]
    },
    {
       "id": 745,
