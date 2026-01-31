@@ -370,7 +370,9 @@
       "difficulty": "Medium",
       "name": "Pow(x, n)",
       "slug": "powx-n",
-      "patterns": []
+      "patterns": [
+         "math"
+      ]
    },
    {
       "id": 51,
