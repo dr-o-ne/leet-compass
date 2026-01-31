@@ -1985,7 +1985,9 @@
       "difficulty": "Easy",
       "name": "Closest Binary Search Tree Value",
       "slug": "closest-binary-search-tree-value",
-      "patterns": []
+      "patterns": [
+         "binary-search-tree"
+      ]
    },
    {
       "id": 271,
