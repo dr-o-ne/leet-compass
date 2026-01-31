@@ -2555,7 +2555,9 @@
       "difficulty": "Easy",
       "name": "Intersection of Two Arrays",
       "slug": "intersection-of-two-arrays",
-      "patterns": []
+      "patterns": [
+         "frequency-map"
+      ]
    },
    {
       "id": 350,
