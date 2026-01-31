@@ -5109,7 +5109,9 @@
       "difficulty": "Medium",
       "name": "Search in a Sorted Array of Unknown Size",
       "slug": "search-in-a-sorted-array-of-unknown-size",
-      "patterns": []
+      "patterns": [
+         "binary-search"
+      ]
    },
    {
       "id": 703,
