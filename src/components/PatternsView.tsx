@@ -94,17 +94,7 @@ export default function PatternsView() {
           setSelectedCompany={setSelectedCompany}
         />
 
-        <label className="flex items-center gap-2 cursor-pointer select-none px-3 py-1.5 rounded-full bg-slate-50 border border-slate-100 hover:border-indigo-200 hover:bg-indigo-50/50 transition-all group">
-          <input
-            type="checkbox"
-            checked={showPatterns}
-            onChange={(e) => setShowPatterns(e.target.checked)}
-            className="w-4 h-4 rounded border-slate-300 text-indigo-600 focus:ring-indigo-500 cursor-pointer"
-          />
-          <span className="text-[11px] font-bold text-slate-600 uppercase tracking-wider group-hover:text-indigo-700">
-            Show Patterns
-          </span>
-        </label>
+
 
         {/* Problem counter */}
         <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-slate-50 border border-slate-100 shadow-sm transition-all hover:border-emerald-200 hover:bg-emerald-50/50 group">
