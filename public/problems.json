@@ -4961,7 +4961,9 @@
       "difficulty": "Easy",
       "name": "Valid Palindrome II",
       "slug": "valid-palindrome-ii",
-      "patterns": []
+      "patterns": [
+         "opposite-ends"
+      ]
    },
    {
       "id": 681,
