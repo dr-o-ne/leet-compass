@@ -33,6 +33,15 @@
 
 			<!-- Actions -->
 			<div class="flex items-center gap-4">
+				<button 
+					id="import-leetcode-btn"
+					class="flex items-center gap-2 px-4 py-2 text-sm font-medium text-emerald-400 hover:text-emerald-300 bg-emerald-500/10 hover:bg-emerald-500/20 border border-emerald-500/30 rounded-xl transition-all"
+				>
+					<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12" />
+					</svg>
+					<span>Import from LeetCode</span>
+				</button>
 				<a 
 					href="https://github.com/dr-o-ne/leet-compass" 
 					target="_blank"
@@ -53,3 +62,99 @@
 		</div>
 	</div>
 </header>
+
+<!-- Import from LeetCode Modal -->
+<div id="import-modal" class="fixed inset-0 z-[100] hidden items-center justify-center bg-black/50">
+	<div class="bg-white rounded-2xl shadow-2xl p-6 w-[600px] max-h-[80vh] flex flex-col border border-slate-200">
+		<div class="flex items-center justify-between mb-4">
+			<h2 class="text-lg font-bold text-slate-800">How to get your solved problems:</h2>
+			<button id="close-modal-btn" class="text-slate-400 hover:text-slate-600 transition-colors">
+				<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+				</svg>
+			</button>
+		</div>
+		<div class="text-sm text-slate-600 mb-4 space-y-2">
+			<ol class="list-decimal list-inside space-y-1 text-slate-500">
+				<li>Login to <a href="https://leetcode.com" target="_blank" class="text-indigo-600 hover:underline">leetcode.com</a></li>
+				<li>Open <a href="https://leetcode.com/api/problems/all/" target="_blank" class="text-indigo-600 hover:underline">leetcode.com/api/problems/all/</a></li>
+				<li>Copy the entire JSON response (Ctrl+A, Ctrl+C)</li>
+				<li>Paste it below and click Import</li>
+			</ol>
+		</div>
+		
+		<textarea
+			id="json-input"
+			placeholder='{"user_name": "MY_USER_NAME"'
+			class="flex-1 min-h-[200px] p-3 bg-slate-50 border border-slate-300 rounded-lg font-mono text-sm text-slate-800 placeholder-slate-400 resize-none focus:outline-none focus:ring-2 focus:ring-indigo-500"
+		></textarea>
+		
+		<div class="flex gap-3 mt-4">
+			<button
+				id="cancel-btn"
+				class="px-4 py-2 rounded-lg border border-slate-300 text-slate-600 hover:bg-slate-100 transition-colors"
+			>
+				Cancel
+			</button>
+			<button
+				id="import-btn"
+				class="px-4 py-2 rounded-lg bg-indigo-600 text-white font-medium hover:bg-indigo-500 transition-colors"
+			>
+				Import
+			</button>
+		</div>
+	</div>
+</div>
+
+<script>
+	const importBtn = document.getElementById('import-leetcode-btn');
+	const modal = document.getElementById('import-modal');
+	const closeBtn = document.getElementById('close-modal-btn');
+	const cancelBtn = document.getElementById('cancel-btn');
+	const importConfirmBtn = document.getElementById('import-btn');
+	const jsonInput = document.getElementById('json-input') as HTMLTextAreaElement;
+
+	function openModal() {
+		modal?.classList.remove('hidden');
+		modal?.classList.add('flex');
+	}
+
+	function closeModal() {
+		modal?.classList.add('hidden');
+		modal?.classList.remove('flex');
+		if (jsonInput) jsonInput.value = '';
+	}
+
+	importBtn?.addEventListener('click', openModal);
+	closeBtn?.addEventListener('click', closeModal);
+	cancelBtn?.addEventListener('click', closeModal);
+	modal?.addEventListener('click', (e) => {
+		if (e.target === modal) closeModal();
+	});
+
+	importConfirmBtn?.addEventListener('click', () => {
+		const json = jsonInput?.value;
+		if (!json) return;
+		
+		try {
+			const data = JSON.parse(json);
+			const solved = new Set<number>();
+			
+			if (data.stat_status_pairs) {
+				data.stat_status_pairs.forEach((item: any) => {
+					if (item.status === "ac") {
+						solved.add(item.stat.frontend_question_id);
+					}
+				});
+			} else if (Array.isArray(data)) {
+				data.forEach((id: number) => solved.add(id));
+			}
+			
+			localStorage.setItem('solvedProblems', JSON.stringify([...solved]));
+			closeModal();
+			alert(`Imported ${solved.size} solved problems! Refresh the page to see changes.`);
+		} catch (e) {
+			alert('Invalid JSON format');
+		}
+	});
+</script>
