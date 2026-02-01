@@ -198,14 +198,7 @@
    {
       "slug": "design",
       "name": "Design",
-      "description": "Problems that require designing classes, APIs, or data structures with specific operations and constraints",
-      "subpatterns": [
-         {
-            "slug": "classic-ds-design",
-            "name": "Classic Data Structure Design",
-            "description": "Design basic data structures with standard operations like insert, delete, search; often used to test knowledge of stacks, queues, hashmaps, heaps, and arrays"
-         }
-      ]
+      "description": "Problems that require designing classes, APIs, or data structures with specific operations and constraints"
    },
    {
       "slug": "dynamic-programming",

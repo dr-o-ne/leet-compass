@@ -58,52 +58,106 @@ export function usePatternsGraph({
             const subSlugToFullId = new Map<string, string>();
             const graph = new Graph();
 
-            patterns.forEach((pattern, patternIndex) => {
+            // === PATTERNS VERTICAL, SUBPATTERNS TO THE RIGHT ===
+            const rowHeight = 600; // row height for pattern + its subpatterns
+            const subSpacingY = 400; // vertical spacing between subpatterns
+            const patternX = -2000; // x-coordinate of patterns (left side)
+            const subpatternX = 0; // x-coordinate of subpatterns (right side)
+
+            let currentY = 0; // current y-position
+            let dbPatternY = 0; // Database pattern position (stored separately)
+
+            // First process all patterns EXCEPT Database
+            patterns.filter(p => p.slug !== 'db').forEach((pattern) => {
                 const patternId = pattern.slug;
-                const angle = (2 * Math.PI * patternIndex) / patterns.length;
-                const radius = 100;
                 subSlugToFullId.set(patternId, patternId);
 
-                let x = radius * Math.cos(angle);
-                let y = radius * Math.sin(angle);
-                let fixed = false;
+                const subpatternCount = pattern.subpatterns?.length || 0;
+                const blockHeight = Math.max(1, subpatternCount) * subSpacingY;
 
-                if (patternId === 'db') {
-                    x = 2000;
-                    y = 1000;
-                    fixed = true;
-                }
+                // Pattern on the left, centered vertically within block
+                const patternY = currentY - blockHeight / 2;
 
                 graph.addNode(patternId, {
-                    x,
-                    y,
+                    x: patternX,
+                    y: patternY,
                     size: 12,
                     label: pattern.name,
                     color: "#6366f1",
-                    fixed
+                    fixed: true
                 });
 
+                // Subpatterns on the right, vertically stacked
                 pattern.subpatterns?.forEach((sub, subIndex) => {
                     const subId = `${pattern.slug}/${sub.slug}`;
                     subSlugToFullId.set(sub.slug, subId);
-                    const subRadius = radius + 50;
-                    const subAngle = angle + (subIndex * 0.2);
+
+                    const subY = currentY - subIndex * subSpacingY;
 
                     graph.addNode(subId, {
-                        x: subRadius * Math.cos(subAngle),
-                        y: subRadius * Math.sin(subAngle),
+                        x: subpatternX,
+                        y: subY,
                         size: 8,
                         label: sub.name,
                         color: "#a5b4fc",
+                        fixed: true
                     });
 
                     graph.addEdge(patternId, subId);
                 });
+
+                currentY -= blockHeight + rowHeight;
             });
+
+            // Store the boundary of main patterns
+            const mainPatternsEndY = currentY;
+
+            // Now add Database separately, with large gap
+            const dbPattern = patterns.find(p => p.slug === 'db');
+            if (dbPattern) {
+                const dbSeparation = 3000; // gap between main patterns and Database
+                currentY -= dbSeparation;
+                dbPatternY = currentY;
+
+                const patternId = dbPattern.slug;
+                subSlugToFullId.set(patternId, patternId);
+
+                graph.addNode(patternId, {
+                    x: patternX,
+                    y: currentY,
+                    size: 12,
+                    label: dbPattern.name,
+                    color: "#6366f1", // same blue as other patterns
+                    fixed: true
+                });
+
+                // Database subpatterns (if any)
+                dbPattern.subpatterns?.forEach((sub, subIndex) => {
+                    const subId = `${dbPattern.slug}/${sub.slug}`;
+                    subSlugToFullId.set(sub.slug, subId);
+
+                    graph.addNode(subId, {
+                        x: subpatternX,
+                        y: currentY - subIndex * subSpacingY,
+                        size: 8,
+                        label: sub.name,
+                        color: "#fcd34d",
+                        fixed: true
+                    });
+
+                    graph.addEdge(patternId, subId);
+                });
+
+                currentY -= rowHeight;
+            }
 
             const problemSlugMap = new Map<string, string>();
 
-            problems.forEach((problem) => {
+            // Height of main patterns area (excluding Database)
+            const mainHeight = Math.abs(mainPatternsEndY) + 1000;
+            const mainStartY = 500;
+
+            problems.forEach((problem, problemIndex) => {
                 const problemId = `problem-${problem.id}`;
                 problemSlugMap.set(problemId, problem.slug);
                 problemDataRef.current.set(problemId, {
@@ -112,7 +166,24 @@ export function usePatternsGraph({
                     name: problem.name,
                 });
 
-                const { x, y } = hashToPosition(problem.slug, 300);
+                // Check if this is a Database problem or regular
+                const isDbProblem = problem.patterns.includes('db');
+
+                const { x: hashX, y: hashY } = hashToPosition(problem.slug, 1000);
+                let x: number;
+                let y: number;
+
+                if (isDbProblem) {
+                    // Database problems in separate zone below (strictly below mainPatternsEndY)
+                    x = 2000 + (hashX / 1000) * 30000;
+                    // Database zone: from dbPatternY+500 to dbPatternY-2500
+                    y = dbPatternY + 500 - (hashY / 1000) * 3000;
+                } else {
+                    // Regular problems only in main zone (above mainPatternsEndY)
+                    x = 2000 + (hashX / 1000) * 30000;
+                    // Regular problems zone: from mainStartY to mainPatternsEndY
+                    y = mainStartY - (hashY / 1000) * mainHeight;
+                }
 
                 graph.addNode(problemId, {
                     x,
@@ -130,16 +201,7 @@ export function usePatternsGraph({
                 });
             });
 
-            forceAtlas2.assign(graph, {
-                iterations: 50,
-                settings: {
-                    scalingRatio: 1000,
-                    gravity: 0,
-                    //adjustSizes: true,
-                    linLogMode: true,
-                    barnesHutOptimize: true
-                }
-            });
+
 
             if (containerRef.current) {
                 graphRef.current = graph;
@@ -284,11 +346,27 @@ export function usePatternsGraph({
             // 2. Apply hover logic only if visible
             if (hoveredNode && graph) {
                 const isHoveredNode = node === hoveredNode;
-                const isSubpattern = hoveredNode && !hoveredNode.includes("/") && node.startsWith(hoveredNode + "/");
+
+                // Check if hoveredNode is a main pattern (no "/" in id)
+                const isHoveredMainPattern = hoveredNode && !hoveredNode.includes("/") && !hoveredNode.startsWith("problem-");
+
+                // If hovering a main pattern, highlight its subpatterns
+                const isSubpatternOfHovered = isHoveredMainPattern && node.startsWith(hoveredNode + "/");
+
+                // If hovering a main pattern, also highlight problems connected to its subpatterns
+                let isProblemOfHoveredPattern = false;
+                if (isHoveredMainPattern && node.startsWith("problem-")) {
+                    // Check if this problem is connected to any subpattern of the hovered pattern
+                    const neighbors = graph.neighbors(node);
+                    isProblemOfHoveredPattern = neighbors.some((neighbor: string) =>
+                        neighbor === hoveredNode || neighbor.startsWith(hoveredNode + "/")
+                    );
+                }
+
                 const isParentPattern = node && !node.includes("/") && hoveredNode.startsWith(node + "/");
                 const isConnectedProblem = graph.hasEdge(node, hoveredNode) || graph.hasEdge(hoveredNode, node);
 
-                if (isHoveredNode || isSubpattern || isParentPattern || isConnectedProblem) {
+                if (isHoveredNode || isSubpatternOfHovered || isParentPattern || isConnectedProblem || isProblemOfHoveredPattern) {
                     return {
                         ...data,
                         zIndex: 1,

@@ -1134,7 +1134,7 @@
       "slug": "min-stack",
       "patterns": [
          "stack-fundamentals",
-         "classic-ds-design"
+         "design"
       ]
    },
    {
@@ -2169,7 +2169,7 @@
       "name": "Find Median from Data Stream",
       "slug": "find-median-from-data-stream",
       "patterns": [
-         "classic-ds-design",
+         "design",
          "priority-queue"
       ]
    },
