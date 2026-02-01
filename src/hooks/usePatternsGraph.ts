@@ -61,7 +61,7 @@ export function usePatternsGraph({
             // === PATTERNS VERTICAL, SUBPATTERNS TO THE RIGHT ===
             const rowHeight = 600; // row height for pattern + its subpatterns
             const subSpacingY = 400; // vertical spacing between subpatterns
-            const patternX = -2000; // x-coordinate of patterns (left side)
+            const patternX = -5000; // x-coordinate of patterns (left side)
             const subpatternX = 0; // x-coordinate of subpatterns (right side)
 
             let currentY = 0; // current y-position
@@ -84,7 +84,8 @@ export function usePatternsGraph({
                     size: 12,
                     label: pattern.name,
                     color: "#6366f1",
-                    fixed: true
+                    fixed: true,
+                    forceLabel: true
                 });
 
                 // Subpatterns on the right, vertically stacked
@@ -100,7 +101,8 @@ export function usePatternsGraph({
                         size: 8,
                         label: sub.name,
                         color: "#a5b4fc",
-                        fixed: true
+                        fixed: true,
+                        forceLabel: true
                     });
 
                     graph.addEdge(patternId, subId);
@@ -128,7 +130,8 @@ export function usePatternsGraph({
                     size: 12,
                     label: dbPattern.name,
                     color: "#6366f1", // same blue as other patterns
-                    fixed: true
+                    fixed: true,
+                    forceLabel: true
                 });
 
                 // Database subpatterns (if any)
@@ -142,7 +145,8 @@ export function usePatternsGraph({
                         size: 8,
                         label: sub.name,
                         color: "#fcd34d",
-                        fixed: true
+                        fixed: true,
+                        forceLabel: true
                     });
 
                     graph.addEdge(patternId, subId);
@@ -175,12 +179,12 @@ export function usePatternsGraph({
 
                 if (isDbProblem) {
                     // Database problems in separate zone below (strictly below mainPatternsEndY)
-                    x = 2000 + (hashX / 1000) * 30000;
+                    x = 7000 + (hashX / 1000) * 30000;
                     // Database zone: from dbPatternY+500 to dbPatternY-2500
                     y = dbPatternY + 500 - (hashY / 1000) * 3000;
                 } else {
                     // Regular problems only in main zone (above mainPatternsEndY)
-                    x = 2000 + (hashX / 1000) * 30000;
+                    x = 7000 + (hashX / 1000) * 30000;
                     // Regular problems zone: from mainStartY to mainPatternsEndY
                     y = mainStartY - (hashY / 1000) * mainHeight;
                 }
