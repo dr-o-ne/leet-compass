@@ -5238,7 +5238,10 @@
       "difficulty": "Hard",
       "name": "Find K-th Smallest Pair Distance",
       "slug": "find-k-th-smallest-pair-distance",
-      "patterns": []
+      "patterns": [
+         "binary-search",
+         "longest-sliding-window"
+      ]
    },
    {
       "id": 720,
