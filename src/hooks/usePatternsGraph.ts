@@ -47,12 +47,28 @@ export function usePatternsGraph({
                 { default: Sigma },
                 { NodeSquareProgram },
                 forceAtlas2Module,
+                { NodeImageProgram },
             ] = await Promise.all([
                 import("graphology"),
                 import("sigma"),
                 import("@sigma/node-square"),
                 import("graphology-layout-forceatlas2"),
+                import("@sigma/node-image"),
             ]);
+
+            // Cross image URL for solved problems
+            const solvedImageUrl = "https://cdn-icons-png.flaticon.com/512/1828/1828778.png";
+
+            // Load solved problems from localStorage
+            const solvedProblems = new Set<number>();
+            try {
+                const stored = localStorage.getItem('solvedProblems');
+                if (stored) {
+                    JSON.parse(stored).forEach((id: number) => solvedProblems.add(id));
+                }
+            } catch (e) {
+                console.error('Failed to load solved problems:', e);
+            }
             const forceAtlas2 = forceAtlas2Module.default;
 
             const subSlugToFullId = new Map<string, string>();
@@ -85,7 +101,7 @@ export function usePatternsGraph({
                     label: pattern.name,
                     color: "#6366f1",
                     fixed: true,
-                    forceLabel: true
+                    forceLabel: true,
                 });
 
                 // Subpatterns on the right, vertically stacked
@@ -189,12 +205,15 @@ export function usePatternsGraph({
                     y = mainStartY - (hashY / 1000) * mainHeight;
                 }
 
+                const isSolved = solvedProblems.has(problem.id);
+
                 graph.addNode(problemId, {
                     x,
                     y,
                     size: 5,
                     label: `${problem.id} - ${problem.name}`,
                     color: difficultyColors[problem.difficulty] || "#999",
+                    ...(isSolved ? { type: "image", image: solvedImageUrl } : {}),
                 });
 
                 problem.patterns.forEach((patternSlug) => {
@@ -212,6 +231,7 @@ export function usePatternsGraph({
                 renderer = new Sigma(graph, containerRef.current, {
                     nodeProgramClasses: {
                         square: NodeSquareProgram,
+                        image: NodeImageProgram,
                     },
                 });
                 rendererRef.current = renderer;

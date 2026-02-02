@@ -94,8 +94,6 @@ export default function PatternsView() {
           setSelectedCompany={setSelectedCompany}
         />
 
-
-
         {/* Problem counter */}
         <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-slate-50 border border-slate-100 shadow-sm transition-all hover:border-emerald-200 hover:bg-emerald-50/50 group">
           <div className="flex h-2 w-2 relative">
