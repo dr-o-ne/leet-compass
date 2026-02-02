@@ -26905,7 +26905,9 @@
       "difficulty": "Medium",
       "name": "Minimum Number of Operations to Have Distinct Elements",
       "slug": "minimum-number-of-operations-to-have-distinct-elements",
-      "patterns": []
+      "patterns": [
+         "last-seen-index"
+      ]
    },
    {
       "id": 3780,
