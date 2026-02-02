@@ -10,6 +10,8 @@ interface UsePatternsGraphProps {
     selectedPattern: string;
     searchQuery: string;
     selectedCompany: string;
+    selectedCollection: string;
+    collectionProblems?: number[];
     hoveredNode: string | null;
     showPatterns: boolean;
     setHoveredNode: (node: string | null) => void;
@@ -25,6 +27,8 @@ export function usePatternsGraph({
     selectedPattern,
     searchQuery,
     selectedCompany,
+    selectedCollection,
+    collectionProblems,
     hoveredNode,
     showPatterns,
     setHoveredNode,
@@ -342,7 +346,17 @@ export function usePatternsGraph({
                         if (targetCompany && !targetCompany.problems.includes(problemId)) {
                             isHidden = true;
                         }
-                    } else if (selectedPattern) {
+                    }
+
+                    // Collection filter
+                    if (!isHidden && selectedCollection && collectionProblems) {
+                        const problemId = parseInt(node.replace("problem-", ""));
+                        if (!collectionProblems.includes(problemId)) {
+                            isHidden = true;
+                        }
+                    }
+
+                    if (!isHidden && selectedPattern) {
                         if (isParentFilter) {
                             const hasMatch = problemInfo.patterns.some(p => subSlugs.includes(p));
                             if (!hasMatch) {
@@ -437,7 +451,7 @@ export function usePatternsGraph({
             });
             setVisibleProblems(count);
         }
-    }, [selectedDifficulties, selectedPattern, patterns, searchQuery, selectedCompany, companies, hoveredNode, showPatterns, filterInfo, targetCompany]);
+    }, [selectedDifficulties, selectedPattern, patterns, searchQuery, selectedCompany, companies, selectedCollection, collectionProblems, hoveredNode, showPatterns, filterInfo, targetCompany]);
 
     return { containerRef };
 }

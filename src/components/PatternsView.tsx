@@ -6,6 +6,11 @@ import DifficultyFilter from "./filters/DifficultyFilter";
 import SearchBar from "./filters/SearchBar";
 import PatternSelect from "./filters/PatternSelect";
 import CompanyFilter from "./filters/CompanyFilter";
+import CollectionFilter from "./filters/CollectionFilter";
+
+interface Collections {
+  [key: string]: number[];
+}
 
 export default function PatternsView() {
   const [loading, setLoading] = useState(true);
@@ -16,6 +21,8 @@ export default function PatternsView() {
   const [searchQuery, setSearchQuery] = useState<string>("");
   const [companies, setCompanies] = useState<Company[]>([]);
   const [selectedCompany, setSelectedCompany] = useState<string>("");
+  const [collections, setCollections] = useState<Collections>({});
+  const [selectedCollection, setSelectedCollection] = useState<string>("");
   const [hoveredNode, setHoveredNode] = useState<string | null>(null);
   const [showPatterns, setShowPatterns] = useState(true);
   const [totalProblems, setTotalProblems] = useState(0);
@@ -29,6 +36,8 @@ export default function PatternsView() {
     selectedPattern,
     searchQuery,
     selectedCompany,
+    selectedCollection,
+    collectionProblems: selectedCollection ? collections[selectedCollection] : undefined,
     hoveredNode,
     showPatterns,
     setHoveredNode,
@@ -41,18 +50,21 @@ export default function PatternsView() {
         ? import.meta.env.BASE_URL.slice(0, -1)
         : import.meta.env.BASE_URL;
 
-      const [patternsRes, problemsRes, companiesRes] = await Promise.all([
+      const [patternsRes, problemsRes, companiesRes, collectionsRes] = await Promise.all([
         fetch(`${baseUrl}/patterns.json`),
         fetch(`${baseUrl}/problems.json`),
         fetch(`${baseUrl}/companies.json`),
+        fetch(`${baseUrl}/collections.json`),
       ]);
       const patternsData: Pattern[] = await patternsRes.json();
       const problemsData: Problem[] = await problemsRes.json();
       const companiesData: Company[] = await companiesRes.json();
+      const collectionsData: Collections = await collectionsRes.json();
 
       setPatterns(patternsData);
       setProblems(problemsData);
       setCompanies(companiesData);
+      setCollections(collectionsData);
       setTotalProblems(problemsData.length);
       setVisibleProblems(problemsData.length);
     }
@@ -92,6 +104,12 @@ export default function PatternsView() {
           companies={companies}
           selectedCompany={selectedCompany}
           setSelectedCompany={setSelectedCompany}
+        />
+
+        <CollectionFilter
+          collections={collections}
+          selectedCollection={selectedCollection}
+          setSelectedCollection={setSelectedCollection}
         />
 
         {/* Problem counter */}
