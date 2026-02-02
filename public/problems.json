@@ -5133,7 +5133,9 @@
       "difficulty": "Easy",
       "name": "Binary Search",
       "slug": "binary-search",
-      "patterns": []
+      "patterns": [
+         "binary-search"
+      ]
    },
    {
       "id": 705,
