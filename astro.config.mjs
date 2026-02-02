@@ -7,8 +7,8 @@ import react from '@astrojs/react';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://dr-o-ne.github.io',
-  base: '/leet-compass',
+  site: 'https://leetcompass.io',
+  base: '/',
   vite: {
     plugins: [tailwindcss()],
   },
