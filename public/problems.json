@@ -5103,7 +5103,9 @@
       "difficulty": "Easy",
       "name": "Search in a Binary Search Tree",
       "slug": "search-in-a-binary-search-tree",
-      "patterns": []
+      "patterns": [
+         "binary-search-tree"
+      ]
    },
    {
       "id": 701,
