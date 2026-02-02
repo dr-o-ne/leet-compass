@@ -21,7 +21,7 @@
          },
          {
             "slug": "last-seen-index",
-            "name": "Last Seen Index / Position Tracking",
+            "name": "Last Seen Index",
             "description": "Tracking last occurrence index to reason about distance, order, or uniqueness"
          },
          {
