@@ -749,7 +749,9 @@
       "difficulty": "Medium",
       "name": "Binary Tree Level Order Traversal",
       "slug": "binary-tree-level-order-traversal",
-      "patterns": []
+      "patterns": [
+         "tree-bfs"
+      ]
    },
    {
       "id": 103,
