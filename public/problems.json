@@ -4299,7 +4299,9 @@
       "difficulty": "Easy",
       "name": "N-ary Tree Preorder Traversal",
       "slug": "n-ary-tree-preorder-traversal",
-      "patterns": []
+      "patterns": [
+         "tree-dfs-top-down"
+      ]
    },
    {
       "id": 590,
