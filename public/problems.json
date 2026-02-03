@@ -816,7 +816,9 @@
       "difficulty": "Easy",
       "name": "Minimum Depth of Binary Tree",
       "slug": "minimum-depth-of-binary-tree",
-      "patterns": []
+      "patterns": [
+         "tree-bfs"
+      ]
    },
    {
       "id": 112,
