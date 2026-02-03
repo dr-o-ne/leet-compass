@@ -691,7 +691,9 @@
       "difficulty": "Easy",
       "name": "Binary Tree Inorder Traversal",
       "slug": "binary-tree-inorder-traversal",
-      "patterns": []
+      "patterns": [
+         "tree-dfs-bottom-up"
+      ]
    },
    {
       "id": 95,
@@ -1047,14 +1049,18 @@
       "difficulty": "Easy",
       "name": "Binary Tree Preorder Traversal",
       "slug": "binary-tree-preorder-traversal",
-      "patterns": []
+      "patterns": [
+         "tree-dfs-top-down"
+      ]
    },
    {
       "id": 145,
       "difficulty": "Easy",
       "name": "Binary Tree Postorder Traversal",
       "slug": "binary-tree-postorder-traversal",
-      "patterns": []
+      "patterns": [
+         "tree-dfs-bottom-up"
+      ]
    },
    {
       "id": 146,
