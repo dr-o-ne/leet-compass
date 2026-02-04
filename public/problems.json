@@ -5133,7 +5133,9 @@
       "difficulty": "Medium",
       "name": "Insert into a Binary Search Tree",
       "slug": "insert-into-a-binary-search-tree",
-      "patterns": []
+      "patterns": [
+         "binary-search-tree"
+      ]
    },
    {
       "id": 702,
