@@ -825,7 +825,9 @@
       "difficulty": "Easy",
       "name": "Path Sum",
       "slug": "path-sum",
-      "patterns": []
+      "patterns": [
+         "tree-dfs-top-down"
+      ]
    },
    {
       "id": 113,
