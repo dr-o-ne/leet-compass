@@ -155,11 +155,6 @@
             "description": "Pass state from parent to children to solve path or accumulation problems"
          },
          {
-            "slug": "tree-dfs-backtracking",
-            "name": "DFS Backtracking (Paths)",
-            "description": "Maintain a mutable path while traversing to generate all paths or combinations"
-         },
-         {
             "slug": "binary-search-tree",
             "name": "Binary Search Tree (BST)",
             "description": "Leverage BST properties (left < root < right) for efficient searching, insertion, deletion, and inorder traversal"
