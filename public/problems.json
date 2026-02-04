@@ -4792,7 +4792,9 @@
       "difficulty": "Medium",
       "name": "Maximum Binary Tree",
       "slug": "maximum-binary-tree",
-      "patterns": []
+      "patterns": [
+         "tree-dfs-top-down"
+      ]
    },
    {
       "id": 655,
