@@ -32,6 +32,11 @@
       ]
    },
    {
+      "slug": "linked-list",
+      "name": "Linked List",
+      "description": "Problems involving singly or doubly linked lists, including traversal, insertion, deletion, reversal, and pointer manipulation"
+   },
+   {
       "slug": "two-pointers",
       "name": "Two Pointers",
       "description": "Problems solved by maintaining two indices that move monotonically to traverse data efficiently",

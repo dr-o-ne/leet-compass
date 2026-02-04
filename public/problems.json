@@ -9161,7 +9161,9 @@
       "difficulty": "Medium",
       "name": "Print Immutable Linked List in Reverse",
       "slug": "print-immutable-linked-list-in-reverse",
-      "patterns": []
+      "patterns": [
+         "linked-list"
+      ]
    },
    {
       "id": 1266,
