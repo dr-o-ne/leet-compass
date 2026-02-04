@@ -1857,7 +1857,9 @@
       "difficulty": "Medium",
       "name": "Count Univalue Subtrees",
       "slug": "count-univalue-subtrees",
-      "patterns": []
+      "patterns": [
+         "tree-dfs-bottom-up"
+      ]
    },
    {
       "id": 251,
