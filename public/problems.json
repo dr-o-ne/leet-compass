@@ -1914,7 +1914,9 @@
       "difficulty": "Easy",
       "name": "Binary Tree Paths",
       "slug": "binary-tree-paths",
-      "patterns": []
+      "patterns": [
+         "tree-dfs-top-down"
+      ]
    },
    {
       "id": 258,
