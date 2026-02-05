@@ -62,7 +62,9 @@
       "difficulty": "Medium",
       "name": "String to Integer (atoi)",
       "slug": "string-to-integer-atoi",
-      "patterns": []
+      "patterns": [
+         "math"
+      ]
    },
    {
       "id": 9,
