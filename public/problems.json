@@ -13,7 +13,9 @@
       "difficulty": "Medium",
       "name": "Add Two Numbers",
       "slug": "add-two-numbers",
-      "patterns": []
+      "patterns": [
+         "linked-list"
+      ]
    },
    {
       "id": 3,
