@@ -53,7 +53,9 @@
       "difficulty": "Medium",
       "name": "Reverse Integer",
       "slug": "reverse-integer",
-      "patterns": []
+      "patterns": [
+         "math"
+      ]
    },
    {
       "id": 8,
