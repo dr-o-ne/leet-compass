@@ -863,7 +863,10 @@
       "difficulty": "Medium",
       "name": "Populating Next Right Pointers in Each Node",
       "slug": "populating-next-right-pointers-in-each-node",
-      "patterns": []
+      "patterns": [
+         "tree-bfs",
+         "tree-dfs-top-down"
+      ]
    },
    {
       "id": 117,
