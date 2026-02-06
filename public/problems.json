@@ -1697,7 +1697,10 @@
       "difficulty": "Easy",
       "name": "Invert Binary Tree",
       "slug": "invert-binary-tree",
-      "patterns": []
+      "patterns": [
+         "tree-dfs-bottom-up",
+         "tree-dfs-top-down"
+      ]
    },
    {
       "id": 227,
