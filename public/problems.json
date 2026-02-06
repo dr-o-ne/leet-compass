@@ -4801,7 +4801,9 @@
       "difficulty": "Medium",
       "name": "Find Duplicate Subtrees",
       "slug": "find-duplicate-subtrees",
-      "patterns": []
+      "patterns": [
+         "tree-dfs-bottom-up"
+      ]
    },
    {
       "id": 653,
