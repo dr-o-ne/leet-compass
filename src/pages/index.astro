@@ -2,6 +2,7 @@
 import '../styles/global.css';
 import Header from '../components/Header.astro';
 import PatternsView from '../components/PatternsView.tsx';
+import Analytics from '../components/Analytics.astro';
 ---
 
 <html lang="en">
@@ -11,6 +12,7 @@ import PatternsView from '../components/PatternsView.tsx';
 		<link rel="icon" type="image/svg+xml" href={`${import.meta.env.BASE_URL}/favicon.svg`.replace(/\/+/g, '/')} />
 		<meta name="generator" content={Astro.generator} />
 		<title>LeetCompass</title>
+		<Analytics />
 	</head>
 
 	<body class="bg-white text-gray-900 h-screen flex flex-col">

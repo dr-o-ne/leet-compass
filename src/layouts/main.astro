@@ -1,5 +1,6 @@
 ---
 import '../styles/global.css';
+import Analytics from '../components/Analytics.astro';
 const { content } = Astro.props;
 ---
 
@@ -9,6 +10,7 @@ const { content } = Astro.props;
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href={`${import.meta.env.BASE_URL}/favicon.svg`.replace(/\/+/g, '/')} />
 		<title>{content.title}</title>
+		<Analytics />
 	</head>
 	<body class="bg-slate-50 text-slate-900 min-h-screen flex flex-col items-center">
 		<main class="w-full max-w-4xl px-6 py-12 prose prose-slate prose-headings:text-indigo-900 prose-a:text-indigo-600 hover:prose-a:text-indigo-500 prose-code:before:content-none prose-code:after:content-none prose-blockquote:before:content-none prose-blockquote:after:content-none prose-blockquote:font-normal prose-blockquote:not-italic">
