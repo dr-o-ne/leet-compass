@@ -959,7 +959,9 @@
       "difficulty": "Medium",
       "name": "Sum Root to Leaf Numbers",
       "slug": "sum-root-to-leaf-numbers",
-      "patterns": []
+      "patterns": [
+         "tree-dfs-top-down"
+      ]
    },
    {
       "id": 130,
