@@ -43,6 +43,7 @@ export default function PatternsView() {
     setHoveredNode,
     setVisibleProblems,
     setLoading,
+    setSelectedPattern,
   });
   useEffect(() => {
     async function loadData() {
@@ -125,6 +126,7 @@ export default function PatternsView() {
             <span className="ml-1 opacity-70">Shown</span>
           </div>
         </div>
+
       </div>
 
       {/* Graph with Spinner Overlay */}

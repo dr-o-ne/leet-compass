@@ -17,6 +17,7 @@ interface UsePatternsGraphProps {
     setHoveredNode: (node: string | null) => void;
     setVisibleProblems: (count: number) => void;
     setLoading: (loading: boolean) => void;
+    setSelectedPattern: (pattern: string) => void;
 }
 
 export function usePatternsGraph({
@@ -34,11 +35,18 @@ export function usePatternsGraph({
     setHoveredNode,
     setVisibleProblems,
     setLoading,
+    setSelectedPattern,
 }: UsePatternsGraphProps) {
     const containerRef = useRef<HTMLDivElement>(null);
     const rendererRef = useRef<any>(null);
     const graphRef = useRef<any>(null);
     const problemDataRef = useRef<Map<string, { difficulty: string; patterns: string[]; name: string }>>(new Map());
+    const selectedPatternRef = useRef<string>(selectedPattern);
+
+    // Keep ref in sync with prop
+    useEffect(() => {
+        selectedPatternRef.current = selectedPattern;
+    }, [selectedPattern]);
 
     useEffect(() => {
         if (!containerRef.current) return;
@@ -244,8 +252,28 @@ export function usePatternsGraph({
                     const slug = problemSlugMap.get(node);
                     if (slug) {
                         window.open(`https://leetcode.com/problems/${slug}`, "_blank");
+                    } else {
+                        // Pattern or subpattern click - sync with dropdown (toggle behavior)
+                        if (node.includes("/")) {
+                            // Subpattern: extract slug after "/"
+                            const subSlug = node.split("/")[1];
+                            // Toggle: if already selected, clear it
+                            if (selectedPatternRef.current === subSlug) {
+                                setSelectedPattern("");
+                            } else {
+                                setSelectedPattern(subSlug);
+                            }
+                        } else {
+                            // Main pattern: use "parent:" prefix
+                            const patternValue = `parent:${node}`;
+                            // Toggle: if already selected, clear it
+                            if (selectedPatternRef.current === patternValue) {
+                                setSelectedPattern("");
+                            } else {
+                                setSelectedPattern(patternValue);
+                            }
+                        }
                     }
-                    // Pattern/subpattern click navigation will be added later
                 });
 
                 renderer.on("enterNode", ({ node }: { node: string }) => {
