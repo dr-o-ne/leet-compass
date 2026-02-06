@@ -42,6 +42,8 @@ export function usePatternsGraph({
     const graphRef = useRef<any>(null);
     const problemDataRef = useRef<Map<string, { difficulty: string; patterns: string[]; name: string }>>(new Map());
     const selectedPatternRef = useRef<string>(selectedPattern);
+    const patternDescriptionsRef = useRef<Map<string, string>>(new Map());
+    const tooltipRef = useRef<HTMLDivElement | null>(null);
 
     // Keep ref in sync with prop
     useEffect(() => {
@@ -100,6 +102,11 @@ export function usePatternsGraph({
                 const patternId = pattern.slug;
                 subSlugToFullId.set(patternId, patternId);
 
+                // Store pattern description for tooltip
+                if (pattern.description) {
+                    patternDescriptionsRef.current.set(patternId, pattern.description);
+                }
+
                 const subpatternCount = pattern.subpatterns?.length || 0;
                 const blockHeight = Math.max(1, subpatternCount) * subSpacingY;
 
@@ -120,6 +127,11 @@ export function usePatternsGraph({
                 pattern.subpatterns?.forEach((sub, subIndex) => {
                     const subId = `${pattern.slug}/${sub.slug}`;
                     subSlugToFullId.set(sub.slug, subId);
+
+                    // Store subpattern description for tooltip
+                    if (sub.description) {
+                        patternDescriptionsRef.current.set(subId, sub.description);
+                    }
 
                     const subY = currentY - subIndex * subSpacingY;
 
@@ -152,6 +164,11 @@ export function usePatternsGraph({
                 const patternId = dbPattern.slug;
                 subSlugToFullId.set(patternId, patternId);
 
+                // Store Database pattern description for tooltip
+                if (dbPattern.description) {
+                    patternDescriptionsRef.current.set(patternId, dbPattern.description);
+                }
+
                 graph.addNode(patternId, {
                     x: patternX,
                     y: currentY,
@@ -166,6 +183,11 @@ export function usePatternsGraph({
                 dbPattern.subpatterns?.forEach((sub, subIndex) => {
                     const subId = `${dbPattern.slug}/${sub.slug}`;
                     subSlugToFullId.set(sub.slug, subId);
+
+                    // Store subpattern description for tooltip
+                    if (sub.description) {
+                        patternDescriptionsRef.current.set(subId, sub.description);
+                    }
 
                     graph.addNode(subId, {
                         x: subpatternX,
@@ -278,10 +300,55 @@ export function usePatternsGraph({
 
                 renderer.on("enterNode", ({ node }: { node: string }) => {
                     setHoveredNode(node);
+
+                    // Show tooltip for patterns/subpatterns only
+                    if (!node.startsWith("problem-")) {
+                        const description = patternDescriptionsRef.current.get(node);
+                        if (description) {
+                            // Create tooltip if it doesn't exist
+                            if (!tooltipRef.current) {
+                                tooltipRef.current = document.createElement("div");
+                                tooltipRef.current.style.cssText = `
+                                    position: fixed;
+                                    background: rgba(15, 23, 42, 0.95);
+                                    color: #f8fafc;
+                                    padding: 10px 14px;
+                                    border-radius: 8px;
+                                    font-size: 12px;
+                                    line-height: 1.5;
+                                    max-width: 300px;
+                                    z-index: 10000;
+                                    pointer-events: none;
+                                    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+                                    border: 1px solid rgba(99, 102, 241, 0.3);
+                                    backdrop-filter: blur(8px);
+                                    opacity: 0;
+                                    transition: opacity 0.15s ease;
+                                `;
+                                document.body.appendChild(tooltipRef.current);
+                            }
+
+                            // Get node position on screen
+                            const nodePos = renderer.getNodeDisplayData(node);
+                            if (nodePos && containerRef.current) {
+                                const viewportPos = renderer.graphToViewport({ x: nodePos.x, y: nodePos.y });
+                                const containerRect = containerRef.current.getBoundingClientRect();
+                                tooltipRef.current.textContent = description;
+                                tooltipRef.current.style.left = `${containerRect.left + viewportPos.x + 15}px`;
+                                tooltipRef.current.style.top = `${containerRect.top + viewportPos.y - 10}px`;
+                                tooltipRef.current.style.opacity = "1";
+                            }
+                        }
+                    }
                 });
 
                 renderer.on("leaveNode", () => {
                     setHoveredNode(null);
+
+                    // Hide tooltip
+                    if (tooltipRef.current) {
+                        tooltipRef.current.style.opacity = "0";
+                    }
                 });
             }
 

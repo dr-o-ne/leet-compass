@@ -1,6 +1,7 @@
 export interface Subpattern {
   slug: string;
   name: string;
+  description?: string;
 }
 
 export interface Pattern {
