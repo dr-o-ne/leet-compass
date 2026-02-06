@@ -331,11 +331,11 @@ export function usePatternsGraph({
                             // Get node position on screen
                             const nodePos = renderer.getNodeDisplayData(node);
                             if (nodePos && containerRef.current) {
-                                const viewportPos = renderer.graphToViewport({ x: nodePos.x, y: nodePos.y });
                                 const containerRect = containerRef.current.getBoundingClientRect();
                                 tooltipRef.current.textContent = description;
-                                tooltipRef.current.style.left = `${containerRect.left + viewportPos.x + 15}px`;
-                                tooltipRef.current.style.top = `${containerRect.top + viewportPos.y - 10}px`;
+                                // Position in top-left corner of the graph
+                                tooltipRef.current.style.left = `${containerRect.left + 20}px`;
+                                tooltipRef.current.style.top = `${containerRect.top + 20}px`;
                                 tooltipRef.current.style.opacity = "1";
                             }
                         }
