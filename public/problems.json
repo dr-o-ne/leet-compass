@@ -847,7 +847,9 @@
       "difficulty": "Medium",
       "name": "Flatten Binary Tree to Linked List",
       "slug": "flatten-binary-tree-to-linked-list",
-      "patterns": []
+      "patterns": [
+         "tree-dfs-top-down"
+      ]
    },
    {
       "id": 115,
