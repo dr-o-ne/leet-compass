@@ -145,14 +145,14 @@
             "description": "Traverse tree level by level, useful for width, min depth, right side view, or zigzag order"
          },
          {
-            "slug": "tree-dfs-bottom-up",
-            "name": "DFS Bottom-Up",
-            "description": "Compute values from children to parent"
+            "slug": "tree-dfs-top-down",
+            "name": "DFS Top-Down (Pre-order)",
+            "description": "Pass state from parent to children to solve path or accumulation problems"
          },
          {
-            "slug": "tree-dfs-top-down",
-            "name": "DFS Top-Down",
-            "description": "Pass state from parent to children to solve path or accumulation problems"
+            "slug": "tree-dfs-bottom-up",
+            "name": "DFS Bottom-Up (Post-order)",
+            "description": "Compute values from children to parent"
          },
          {
             "slug": "binary-search-tree",
