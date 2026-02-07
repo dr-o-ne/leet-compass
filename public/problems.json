@@ -819,7 +819,9 @@
       "difficulty": "Easy",
       "name": "Balanced Binary Tree",
       "slug": "balanced-binary-tree",
-      "patterns": []
+      "patterns": [
+         "tree-dfs-bottom-up"
+      ]
    },
    {
       "id": 111,
