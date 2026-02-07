@@ -317,6 +317,7 @@ export function usePatternsGraph({
                                     font-size: 12px;
                                     line-height: 1.5;
                                     max-width: 300px;
+                                    white-space: pre-line;
                                     z-index: 10000;
                                     pointer-events: none;
                                     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);

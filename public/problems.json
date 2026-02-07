@@ -1728,7 +1728,9 @@
       "difficulty": "Medium",
       "name": "Kth Smallest Element in a BST",
       "slug": "kth-smallest-element-in-a-bst",
-      "patterns": []
+      "patterns": [
+         "binary-search-tree"
+      ]
    },
    {
       "id": 231,

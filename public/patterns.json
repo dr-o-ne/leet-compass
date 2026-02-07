@@ -157,7 +157,7 @@
          {
             "slug": "binary-search-tree",
             "name": "Binary Search Tree (BST)",
-            "description": "Leverage BST properties (left < root < right) for efficient searching, insertion, deletion, and inorder traversal"
+            "description": "Leverage BST properties (left < root < right) for efficient searching, insertion, deletion, and inorder traversal.\n\nKey property: the result of its inorder traversal is sorted in ascending order"
          }
       ]
    },
