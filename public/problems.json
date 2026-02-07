@@ -727,7 +727,9 @@
       "difficulty": "Medium",
       "name": "Validate Binary Search Tree",
       "slug": "validate-binary-search-tree",
-      "patterns": []
+      "patterns": [
+         "binary-search-tree"
+      ]
    },
    {
       "id": 99,
