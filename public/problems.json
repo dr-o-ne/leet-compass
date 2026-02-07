@@ -3949,7 +3949,9 @@
       "difficulty": "Medium",
       "name": "Convert BST to Greater Tree",
       "slug": "convert-bst-to-greater-tree",
-      "patterns": []
+      "patterns": [
+         "binary-search-tree"
+      ]
    },
    {
       "id": 539,
@@ -7554,7 +7556,9 @@
       "difficulty": "Medium",
       "name": "Binary Search Tree to Greater Sum Tree",
       "slug": "binary-search-tree-to-greater-sum-tree",
-      "patterns": []
+      "patterns": [
+         "binary-search-tree"
+      ]
    },
    {
       "id": 1039,
