@@ -3325,7 +3325,9 @@
       "difficulty": "Medium",
       "name": "Delete Node in a BST",
       "slug": "delete-node-in-a-bst",
-      "patterns": []
+      "patterns": [
+         "binary-search-tree"
+      ]
    },
    {
       "id": 451,
