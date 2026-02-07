@@ -585,7 +585,9 @@
       "difficulty": "Medium",
       "name": "Subsets",
       "slug": "subsets",
-      "patterns": []
+      "patterns": [
+         "backtracking"
+      ]
    },
    {
       "id": 79,
