@@ -3180,7 +3180,9 @@
       "difficulty": "Medium",
       "name": "N-ary Tree Level Order Traversal",
       "slug": "n-ary-tree-level-order-traversal",
-      "patterns": []
+      "patterns": [
+         "tree-bfs"
+      ]
    },
    {
       "id": 430,
