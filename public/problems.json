@@ -7803,7 +7803,9 @@
       "difficulty": "Easy",
       "name": "Greatest Common Divisor of Strings",
       "slug": "greatest-common-divisor-of-strings",
-      "patterns": []
+      "patterns": [
+         "array-fundamentals"
+      ]
    },
    {
       "id": 1072,
