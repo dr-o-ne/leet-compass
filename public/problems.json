@@ -350,7 +350,9 @@
       "difficulty": "Medium",
       "name": "Permutations",
       "slug": "permutations",
-      "patterns": []
+      "patterns": [
+         "backtracking"
+      ]
    },
    {
       "id": 47,
