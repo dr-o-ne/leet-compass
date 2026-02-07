@@ -184,6 +184,11 @@
       ]
    },
    {
+      "slug": "backtracking",
+      "name": "Backtracking",
+      "description": "Problems where you build solutions incrementally, explore all possibilities, and backtrack when a partial solution is invalid or complete"
+   },
+   {
       "slug": "greedy",
       "name": "Greedy",
       "description": "Problems where a local optimal choice at each step leads to a global optimum",
