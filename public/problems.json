@@ -71,7 +71,9 @@
       "difficulty": "Easy",
       "name": "Palindrome Number",
       "slug": "palindrome-number",
-      "patterns": []
+      "patterns": [
+         "math"
+      ]
    },
    {
       "id": 10,
