@@ -1776,7 +1776,9 @@
       "difficulty": "Medium",
       "name": "Lowest Common Ancestor of a Binary Tree",
       "slug": "lowest-common-ancestor-of-a-binary-tree",
-      "patterns": []
+      "patterns": [
+         "tree-dfs-bottom-up"
+      ]
    },
    {
       "id": 237,
@@ -11937,7 +11939,9 @@
       "difficulty": "Medium",
       "name": "Lowest Common Ancestor of a Binary Tree II",
       "slug": "lowest-common-ancestor-of-a-binary-tree-ii",
-      "patterns": []
+      "patterns": [
+         "tree-dfs-bottom-up"
+      ]
    },
    {
       "id": 1645,
