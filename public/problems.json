@@ -23008,7 +23008,9 @@
       "difficulty": "Medium",
       "name": "Generate Binary Strings Without Adjacent Zeros",
       "slug": "generate-binary-strings-without-adjacent-zeros",
-      "patterns": []
+      "patterns": [
+         "backtracking"
+      ]
    },
    {
       "id": 3212,
