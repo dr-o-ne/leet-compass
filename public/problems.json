@@ -578,7 +578,9 @@
       "difficulty": "Medium",
       "name": "Combinations",
       "slug": "combinations",
-      "patterns": []
+      "patterns": [
+         "backtracking"
+      ]
    },
    {
       "id": 78,
