@@ -280,7 +280,9 @@
       "difficulty": "Medium",
       "name": "Valid Sudoku",
       "slug": "valid-sudoku",
-      "patterns": []
+      "patterns": [
+         "matrix"
+      ]
    },
    {
       "id": 37,
