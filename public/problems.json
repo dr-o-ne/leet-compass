@@ -3917,7 +3917,9 @@
       "difficulty": "Easy",
       "name": "Minimum Absolute Difference in BST",
       "slug": "minimum-absolute-difference-in-bst",
-      "patterns": []
+      "patterns": [
+         "binary-search-tree"
+      ]
    },
    {
       "id": 531,
