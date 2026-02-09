@@ -1636,7 +1636,9 @@
       "difficulty": "Medium",
       "name": "Combination Sum III",
       "slug": "combination-sum-iii",
-      "patterns": []
+      "patterns": [
+         "backtracking"
+      ]
    },
    {
       "id": 217,
