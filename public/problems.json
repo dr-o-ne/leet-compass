@@ -552,7 +552,9 @@
       "difficulty": "Medium",
       "name": "Set Matrix Zeroes",
       "slug": "set-matrix-zeroes",
-      "patterns": []
+      "patterns": [
+         "matrix"
+      ]
    },
    {
       "id": 74,
