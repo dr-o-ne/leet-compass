@@ -14455,7 +14455,9 @@
       "difficulty": "Easy",
       "name": "Find the Middle Index in Array",
       "slug": "find-the-middle-index-in-array",
-      "patterns": []
+      "patterns": [
+         "prefix-sum-product"
+      ]
    },
    {
       "id": 1992,
