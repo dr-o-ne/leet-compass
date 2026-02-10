@@ -396,7 +396,9 @@
       "difficulty": "Hard",
       "name": "N-Queens",
       "slug": "n-queens",
-      "patterns": []
+      "patterns": [
+         "backtracking"
+      ]
    },
    {
       "id": 52,
