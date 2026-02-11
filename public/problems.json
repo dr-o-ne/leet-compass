@@ -3821,7 +3821,10 @@
       "difficulty": "Medium",
       "name": "Find Largest Value in Each Tree Row",
       "slug": "find-largest-value-in-each-tree-row",
-      "patterns": []
+      "patterns": [
+         "tree-bfs",
+         "tree-dfs-top-down"
+      ]
    },
    {
       "id": 516,
