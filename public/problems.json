@@ -315,7 +315,9 @@
       "difficulty": "Medium",
       "name": "Combination Sum II",
       "slug": "combination-sum-ii",
-      "patterns": []
+      "patterns": [
+         "backtracking"
+      ]
    },
    {
       "id": 41,
