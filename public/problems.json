@@ -474,7 +474,9 @@
       "difficulty": "Medium",
       "name": "Rotate List",
       "slug": "rotate-list",
-      "patterns": []
+      "patterns": [
+         "linked-list"
+      ]
    },
    {
       "id": 62,
