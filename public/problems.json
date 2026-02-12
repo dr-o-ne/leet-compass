@@ -39,7 +39,9 @@
       "difficulty": "Medium",
       "name": "Longest Palindromic Substring",
       "slug": "longest-palindromic-substring",
-      "patterns": []
+      "patterns": [
+         "opposite-ends"
+      ]
    },
    {
       "id": 6,
@@ -4136,7 +4138,9 @@
       "difficulty": "Easy",
       "name": "Reverse Words in a String III",
       "slug": "reverse-words-in-a-string-iii",
-      "patterns": []
+      "patterns": [
+         "opposite-ends"
+      ]
    },
    {
       "id": 558,
