@@ -909,14 +909,18 @@
       "difficulty": "Easy",
       "name": "Pascal's Triangle",
       "slug": "pascals-triangle",
-      "patterns": []
+      "patterns": [
+         "array-fundamentals"
+      ]
    },
    {
       "id": 119,
       "difficulty": "Easy",
       "name": "Pascal's Triangle II",
       "slug": "pascals-triangle-ii",
-      "patterns": []
+      "patterns": [
+         "array-fundamentals"
+      ]
    },
    {
       "id": 120,
