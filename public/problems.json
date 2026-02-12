@@ -2307,7 +2307,9 @@
       "difficulty": "Easy",
       "name": "Range Sum Query - Immutable",
       "slug": "range-sum-query-immutable",
-      "patterns": []
+      "patterns": [
+         "prefix-sum-product"
+      ]
    },
    {
       "id": 304,
