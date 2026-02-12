@@ -7093,7 +7093,9 @@
       "difficulty": "Medium",
       "name": "Numbers With Same Consecutive Differences",
       "slug": "numbers-with-same-consecutive-differences",
-      "patterns": []
+      "patterns": [
+         "backtracking"
+      ]
    },
    {
       "id": 968,
