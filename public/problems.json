@@ -464,7 +464,9 @@
       "difficulty": "Medium",
       "name": "Spiral Matrix II",
       "slug": "spiral-matrix-ii",
-      "patterns": []
+      "patterns": [
+         "matrix"
+      ]
    },
    {
       "id": 60,
