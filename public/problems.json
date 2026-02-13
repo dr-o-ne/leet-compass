@@ -2193,7 +2193,9 @@
       "difficulty": "Medium",
       "name": "Find the Duplicate Number",
       "slug": "find-the-duplicate-number",
-      "patterns": []
+      "patterns": [
+         "binary-search"
+      ]
    },
    {
       "id": 288,
