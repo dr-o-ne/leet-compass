@@ -165,7 +165,9 @@
       "difficulty": "Easy",
       "name": "Merge Two Sorted Lists",
       "slug": "merge-two-sorted-lists",
-      "patterns": []
+      "patterns": [
+         "linked-list"
+      ]
    },
    {
       "id": 22,
