@@ -1871,7 +1871,9 @@
       "difficulty": "Easy",
       "name": "Shortest Word Distance",
       "slug": "shortest-word-distance",
-      "patterns": []
+      "patterns": [
+         "frequency-map"
+      ]
    },
    {
       "id": 244,
