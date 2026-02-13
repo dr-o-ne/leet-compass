@@ -386,7 +386,9 @@
       "difficulty": "Medium",
       "name": "Group Anagrams",
       "slug": "group-anagrams",
-      "patterns": []
+      "patterns": [
+         "frequency-map"
+      ]
    },
    {
       "id": 50,
