@@ -489,7 +489,9 @@
       "difficulty": "Medium",
       "name": "Unique Paths",
       "slug": "unique-paths",
-      "patterns": []
+      "patterns": [
+         "dp-2d-grid"
+      ]
    },
    {
       "id": 63,

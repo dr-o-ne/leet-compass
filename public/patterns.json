@@ -214,6 +214,11 @@
             "slug": "dp-1d-linear",
             "name": "1D Linear DP",
             "description": "Problems where the state depends on previous indices in a linear order; typically dp[i] depends on dp[i-1], dp[i-2], etc. Example: Fibonacci, Tribonacci, Climbing Stairs"
+         },
+         {
+            "slug": "dp-2d-grid",
+            "name": "2D Grid DP",
+            "description": "DP on a 2D grid where each cell depends on adjacent cells (top, left, right, bottom, or diagonal). Used in path counting and minimum path cost problems"
          }
       ]
    },
