@@ -16847,7 +16847,9 @@
       "difficulty": "Medium",
       "name": "Spiral Matrix IV",
       "slug": "spiral-matrix-iv",
-      "patterns": []
+      "patterns": [
+         "matrix"
+      ]
    },
    {
       "id": 2327,
