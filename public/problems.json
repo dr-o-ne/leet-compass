@@ -337,7 +337,9 @@
       "difficulty": "Hard",
       "name": "Trapping Rain Water",
       "slug": "trapping-rain-water",
-      "patterns": []
+      "patterns": [
+         "opposite-ends"
+      ]
    },
    {
       "id": 43,
