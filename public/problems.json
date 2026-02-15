@@ -3929,7 +3929,9 @@
       "difficulty": "Medium",
       "name": "Beautiful Arrangement",
       "slug": "beautiful-arrangement",
-      "patterns": []
+      "patterns": [
+         "backtracking"
+      ]
    },
    {
       "id": 527,
@@ -19060,7 +19062,9 @@
       "difficulty": "Medium",
       "name": "Find the Score of All Prefixes of an Array",
       "slug": "find-the-score-of-all-prefixes-of-an-array",
-      "patterns": []
+      "patterns": [
+         "array-fundamentals"
+      ]
    },
    {
       "id": 2641,
