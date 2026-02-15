@@ -3671,7 +3671,9 @@
       "difficulty": "Medium",
       "name": "Non-decreasing Subsequences",
       "slug": "non-decreasing-subsequences",
-      "patterns": []
+      "patterns": [
+         "backtracking"
+      ]
    },
    {
       "id": 492,
