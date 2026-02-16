@@ -1718,7 +1718,9 @@
       "difficulty": "Easy",
       "name": "Count Complete Tree Nodes",
       "slug": "count-complete-tree-nodes",
-      "patterns": []
+      "patterns": [
+         "tree-dfs-bottom-up"
+      ]
    },
    {
       "id": 223,
