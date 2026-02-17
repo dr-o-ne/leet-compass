@@ -1553,7 +1553,11 @@
       "difficulty": "Medium",
       "name": "Number of Islands",
       "slug": "number-of-islands",
-      "patterns": []
+      "patterns": [
+         "graph-bfs",
+         "graph-dfs",
+         "union-find"
+      ]
    },
    {
       "id": 201,
@@ -9201,7 +9205,11 @@
       "difficulty": "Medium",
       "name": "Number of Closed Islands",
       "slug": "number-of-closed-islands",
-      "patterns": []
+      "patterns": [
+         "graph-bfs",
+         "graph-dfs",
+         "union-find"
+      ]
    },
    {
       "id": 1255,
