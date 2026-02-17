@@ -5195,7 +5195,11 @@
       "difficulty": "Medium",
       "name": "Max Area of Island",
       "slug": "max-area-of-island",
-      "patterns": []
+      "patterns": [
+         "graph-bfs",
+         "graph-dfs",
+         "union-find"
+      ]
    },
    {
       "id": 696,
