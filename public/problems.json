@@ -2336,7 +2336,9 @@
       "difficulty": "Medium",
       "name": "Range Sum Query 2D - Immutable",
       "slug": "range-sum-query-2d-immutable",
-      "patterns": []
+      "patterns": [
+         "prefix-sum-product"
+      ]
    },
    {
       "id": 305,
