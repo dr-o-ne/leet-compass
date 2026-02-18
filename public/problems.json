@@ -9927,7 +9927,10 @@
       "difficulty": "Medium",
       "name": "Product of the Last K Numbers",
       "slug": "product-of-the-last-k-numbers",
-      "patterns": []
+      "patterns": [
+         "design",
+         "prefix-sum-product"
+      ]
    },
    {
       "id": 1353,
