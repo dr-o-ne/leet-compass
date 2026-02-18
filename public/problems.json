@@ -5415,7 +5415,9 @@
       "difficulty": "Easy",
       "name": "Find Pivot Index",
       "slug": "find-pivot-index",
-      "patterns": []
+      "patterns": [
+         "prefix-sum-product"
+      ]
    },
    {
       "id": 725,
