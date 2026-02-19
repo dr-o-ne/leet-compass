@@ -2882,7 +2882,9 @@
       "difficulty": "Medium",
       "name": "Insert Delete GetRandom O(1)",
       "slug": "insert-delete-getrandom-o1",
-      "patterns": []
+      "patterns": [
+         "design"
+      ]
    },
    {
       "id": 381,
