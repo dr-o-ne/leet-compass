@@ -10977,7 +10977,9 @@
       "difficulty": "Medium",
       "name": "Check If Array Pairs Are Divisible by k",
       "slug": "check-if-array-pairs-are-divisible-by-k",
-      "patterns": []
+      "patterns": [
+         "frequency-map"
+      ]
    },
    {
       "id": 1498,
