@@ -6636,7 +6636,8 @@
       "name": "Maximum Frequency Stack",
       "slug": "maximum-frequency-stack",
       "patterns": [
-         "stack-fundamentals"
+         "stack-fundamentals",
+         "design"
       ]
    },
    {
