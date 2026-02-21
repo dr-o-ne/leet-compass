@@ -2940,7 +2940,9 @@
       "difficulty": "Medium",
       "name": "Longest Absolute File Path",
       "slug": "longest-absolute-file-path",
-      "patterns": []
+      "patterns": [
+         "stack-fundamentals"
+      ]
    },
    {
       "id": 389,
