@@ -6824,7 +6824,10 @@
       "difficulty": "Medium",
       "name": "Minimum Add to Make Parentheses Valid",
       "slug": "minimum-add-to-make-parentheses-valid",
-      "patterns": []
+      "patterns": [
+         "frequency-map",
+         "stack-fundamentals"
+      ]
    },
    {
       "id": 922,
