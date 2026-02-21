@@ -15112,7 +15112,7 @@
       "name": "Time Needed to Buy Tickets",
       "slug": "time-needed-to-buy-tickets",
       "patterns": [
-         "array-fundamentals"
+         "queue-deque-fundamentals"
       ]
    },
    {
