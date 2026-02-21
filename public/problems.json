@@ -6911,7 +6911,9 @@
       "difficulty": "Easy",
       "name": "Number of Recent Calls",
       "slug": "number-of-recent-calls",
-      "patterns": []
+      "patterns": [
+         "queue-deque-fundamentals"
+      ]
    },
    {
       "id": 934,
