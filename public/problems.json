@@ -6635,7 +6635,9 @@
       "difficulty": "Hard",
       "name": "Maximum Frequency Stack",
       "slug": "maximum-frequency-stack",
-      "patterns": []
+      "patterns": [
+         "stack-fundamentals"
+      ]
    },
    {
       "id": 896,
