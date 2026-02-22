@@ -3062,7 +3062,11 @@
       "difficulty": "Easy",
       "name": "Sum of Left Leaves",
       "slug": "sum-of-left-leaves",
-      "patterns": []
+      "patterns": [
+         "tree-bfs",
+         "tree-dfs-bottom-up",
+         "tree-dfs-top-down"
+      ]
    },
    {
       "id": 405,
