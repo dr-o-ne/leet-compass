@@ -7300,7 +7300,9 @@
       "difficulty": "Medium",
       "name": "Smallest String Starting From Leaf",
       "slug": "smallest-string-starting-from-leaf",
-      "patterns": []
+      "patterns": [
+         "tree-dfs-top-down"
+      ]
    },
    {
       "id": 989,
