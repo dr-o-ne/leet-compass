@@ -3016,7 +3016,10 @@
       "difficulty": "Medium",
       "name": "Random Pick Index",
       "slug": "random-pick-index",
-      "patterns": []
+      "patterns": [
+         "design",
+         "array-fundamentals"
+      ]
    },
    {
       "id": 399,
