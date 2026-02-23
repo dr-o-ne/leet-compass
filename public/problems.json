@@ -3966,7 +3966,10 @@
       "difficulty": "Medium",
       "name": "Random Pick with Weight",
       "slug": "random-pick-with-weight",
-      "patterns": []
+      "patterns": [
+         "prefix-sum-product",
+         "binary-search"
+      ]
    },
    {
       "id": 529,
