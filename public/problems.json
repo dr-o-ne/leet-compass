@@ -5322,7 +5322,10 @@
       "difficulty": "Hard",
       "name": "Random Pick with Blacklist",
       "slug": "random-pick-with-blacklist",
-      "patterns": []
+      "patterns": [
+         "design",
+         "array-fundamentals"
+      ]
    },
    {
       "id": 711,
