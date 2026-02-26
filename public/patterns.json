@@ -231,6 +231,11 @@
             "slug": "bit-manipulation",
             "name": "Bit Manipulation",
             "description": "Use bitwise operations like XOR, AND, OR, shifts to solve problems efficiently with constant space"
+         },
+         {
+            "slug": "game-theory",
+            "name": "Game Theory",
+            "description": "Problems involving strategic decision making, winning strategies, and combinatorial games"
          }
       ]
    },

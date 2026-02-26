@@ -2244,7 +2244,9 @@
       "difficulty": "Easy",
       "name": "Nim Game",
       "slug": "nim-game",
-      "patterns": []
+      "patterns": [
+         "game-theory"
+      ]
    },
    {
       "id": 293,
