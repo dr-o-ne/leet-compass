@@ -5640,7 +5640,9 @@
       "difficulty": "Medium",
       "name": "Open the Lock",
       "slug": "open-the-lock",
-      "patterns": []
+      "patterns": [
+         "tree-bfs"
+      ]
    },
    {
       "id": 753,
