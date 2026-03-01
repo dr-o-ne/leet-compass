@@ -14223,7 +14223,9 @@
       "difficulty": "Hard",
       "name": "Number of Visible People in a Queue",
       "slug": "number-of-visible-people-in-a-queue",
-      "patterns": []
+      "patterns": [
+         "monotonic-stack"
+      ]
    },
    {
       "id": 1945,
