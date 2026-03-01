@@ -7544,7 +7544,9 @@
       "difficulty": "Medium",
       "name": "Next Greater Node In Linked List",
       "slug": "next-greater-node-in-linked-list",
-      "patterns": []
+      "patterns": [
+         "monotonic-stack"
+      ]
    },
    {
       "id": 1020,
