@@ -9176,7 +9176,9 @@
       "difficulty": "Medium",
       "name": "Design A Leaderboard",
       "slug": "design-a-leaderboard",
-      "patterns": []
+      "patterns": [
+         "design"
+      ]
    },
    {
       "id": 1245,
