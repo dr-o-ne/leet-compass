@@ -23351,7 +23351,10 @@
       "difficulty": "Easy",
       "name": "Design Neighbor Sum Service",
       "slug": "design-neighbor-sum-service",
-      "patterns": []
+      "patterns": [
+         "design",
+         "matrix"
+      ]
    },
    {
       "id": 3243,
