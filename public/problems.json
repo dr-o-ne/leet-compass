@@ -5279,7 +5279,10 @@
       "difficulty": "Easy",
       "name": "Kth Largest Element in a Stream",
       "slug": "kth-largest-element-in-a-stream",
-      "patterns": []
+      "patterns": [
+         "priority-queue",
+         "design"
+      ]
    },
    {
       "id": 704,
