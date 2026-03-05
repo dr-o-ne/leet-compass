@@ -12156,7 +12156,9 @@
       "difficulty": "Easy",
       "name": "Design an Ordered Stream",
       "slug": "design-an-ordered-stream",
-      "patterns": []
+      "patterns": [
+         "design"
+      ]
    },
    {
       "id": 1657,
