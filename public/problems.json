@@ -5962,7 +5962,9 @@
       "difficulty": "Medium",
       "name": "All Paths From Source to Target",
       "slug": "all-paths-from-source-to-target",
-      "patterns": []
+      "patterns": [
+         "backtracking"
+      ]
    },
    {
       "id": 798,
