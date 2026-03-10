@@ -14431,7 +14431,11 @@
       "difficulty": "Easy",
       "name": "Find if Path Exists in Graph",
       "slug": "find-if-path-exists-in-graph",
-      "patterns": []
+      "patterns": [
+         "graph-bfs",
+         "graph-dfs",
+         "union-find"
+      ]
    },
    {
       "id": 1972,
