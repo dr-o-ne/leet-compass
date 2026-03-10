@@ -5876,7 +5876,10 @@
       "difficulty": "Medium",
       "name": "Is Graph Bipartite?",
       "slug": "is-graph-bipartite",
-      "patterns": []
+      "patterns": [
+         "graph-bfs",
+         "graph-dfs"
+      ]
    },
    {
       "id": 786,
@@ -6594,7 +6597,10 @@
       "difficulty": "Medium",
       "name": "Possible Bipartition",
       "slug": "possible-bipartition",
-      "patterns": []
+      "patterns": [
+         "graph-bfs",
+         "graph-dfs"
+      ]
    },
    {
       "id": 887,
