@@ -2410,7 +2410,10 @@
       "difficulty": "Medium",
       "name": "Binary Tree Vertical Order Traversal",
       "slug": "binary-tree-vertical-order-traversal",
-      "patterns": []
+      "patterns": [
+         "tree-bfs",
+         "tree-dfs-top-down"
+      ]
    },
    {
       "id": 315,
