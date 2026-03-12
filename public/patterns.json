@@ -180,6 +180,11 @@
             "slug": "union-find",
             "name": "Union-Find / Disjoint Set",
             "description": "Tracking connected components or detecting cycles efficiently using a disjoint set structure. Example: 'Redundant Connection', 'Number of Connected Components in an Undirected Graph'"
+         },
+         {
+            "slug": "eulerian-path",
+            "name": "Eulerian Path / Cycle",
+            "description": "Traverse every edge exactly once in a graph. Typically solved using Hierholzer's algorithm with DFS while removing edges. Common in problems involving tickets, pairs, or routes that must all be used exactly once."
          }
       ]
    },
