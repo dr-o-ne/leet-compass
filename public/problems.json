@@ -15337,7 +15337,9 @@
       "difficulty": "Medium",
       "name": "Subsequence of Size K With the Largest Even Sum",
       "slug": "subsequence-of-size-k-with-the-largest-even-sum",
-      "patterns": []
+      "patterns": [
+         "eulerian-path"
+      ]
    },
    {
       "id": 2099,
