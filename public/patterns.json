@@ -183,8 +183,13 @@
          },
          {
             "slug": "eulerian-path",
-            "name": "Eulerian Path / Cycle",
+            "name": "Eulerian Path",
             "description": "Traverse every edge exactly once in a graph. Typically solved using Hierholzer's algorithm with DFS while removing edges. Common in problems involving tickets, pairs, or routes that must all be used exactly once."
+         },
+         {
+            "slug": "cycle-detection",
+            "name": "Cycle Detection",
+            "description": "Detecting cycles in graphs or linked structures. Techniques include DFS with recursion stack for directed graphs, Union-Find for undirected graphs, and topological sorting (Kahn's algorithm) to detect cycles via remaining nodes with non-zero indegree. Example: 'Course Schedule', 'Redundant Connection', 'Linked List Cycle'."
          }
       ]
    },

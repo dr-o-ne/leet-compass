@@ -1606,7 +1606,9 @@
       "difficulty": "Medium",
       "name": "Course Schedule",
       "slug": "course-schedule",
-      "patterns": []
+      "patterns": [
+         "cycle-detection"
+      ]
    },
    {
       "id": 208,
