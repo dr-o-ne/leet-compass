@@ -15334,16 +15334,16 @@
       "difficulty": "Hard",
       "name": "Valid Arrangement of Pairs",
       "slug": "valid-arrangement-of-pairs",
-      "patterns": []
+      "patterns": [
+         "eulerian-path"
+      ]
    },
    {
       "id": 2098,
       "difficulty": "Medium",
       "name": "Subsequence of Size K With the Largest Even Sum",
       "slug": "subsequence-of-size-k-with-the-largest-even-sum",
-      "patterns": [
-         "eulerian-path"
-      ]
+      "patterns": []
    },
    {
       "id": 2099,
