@@ -1631,7 +1631,9 @@
       "difficulty": "Medium",
       "name": "Course Schedule II",
       "slug": "course-schedule-ii",
-      "patterns": []
+      "patterns": [
+         "cycle-detection"
+      ]
    },
    {
       "id": 211,
