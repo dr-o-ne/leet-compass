@@ -7361,7 +7361,11 @@
       "difficulty": "Medium",
       "name": "Satisfiability of Equality Equations",
       "slug": "satisfiability-of-equality-equations",
-      "patterns": []
+      "patterns": [
+         "graph-bfs",
+         "graph-dfs",
+         "union-find"
+      ]
    },
    {
       "id": 991,
