@@ -1015,7 +1015,11 @@
       "difficulty": "Medium",
       "name": "Surrounded Regions",
       "slug": "surrounded-regions",
-      "patterns": []
+      "patterns": [
+         "graph-bfs",
+         "graph-dfs",
+         "union-find"
+      ]
    },
    {
       "id": 131,
