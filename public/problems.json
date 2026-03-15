@@ -2480,7 +2480,11 @@
       "difficulty": "Medium",
       "name": "Number of Connected Components in an Undirected Graph",
       "slug": "number-of-connected-components-in-an-undirected-graph",
-      "patterns": []
+      "patterns": [
+         "graph-bfs",
+         "graph-dfs",
+         "union-find"
+      ]
    },
    {
       "id": 324,
