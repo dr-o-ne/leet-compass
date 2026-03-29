@@ -5618,7 +5618,9 @@
       "difficulty": "Easy",
       "name": "Min Cost Climbing Stairs",
       "slug": "min-cost-climbing-stairs",
-      "patterns": []
+      "patterns": [
+         "dp-1d-linear"
+      ]
    },
    {
       "id": 747,
