@@ -10641,7 +10641,9 @@
       "difficulty": "Medium",
       "name": "Build an Array With Stack Operations",
       "slug": "build-an-array-with-stack-operations",
-      "patterns": []
+      "patterns": [
+         "stack"
+      ]
    },
    {
       "id": 1442,
