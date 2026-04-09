@@ -2316,7 +2316,9 @@
       "difficulty": "Medium",
       "name": "Longest Increasing Subsequence",
       "slug": "longest-increasing-subsequence",
-      "patterns": []
+      "patterns": [
+         "dp-1d-linear"
+      ]
    },
    {
       "id": 301,
