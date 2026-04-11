@@ -6946,7 +6946,9 @@
       "difficulty": "Medium",
       "name": "Minimum Falling Path Sum",
       "slug": "minimum-falling-path-sum",
-      "patterns": []
+      "patterns": [
+         "dp-2d-grid"
+      ]
    },
    {
       "id": 932,
