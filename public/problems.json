@@ -7677,7 +7677,10 @@
       "difficulty": "Hard",
       "name": "Stream of Characters",
       "slug": "stream-of-characters",
-      "patterns": []
+      "patterns": [
+         "design",
+         "trie"
+      ]
    },
    {
       "id": 1033,

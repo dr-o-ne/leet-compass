@@ -158,6 +158,11 @@
             "slug": "binary-search-tree",
             "name": "Binary Search Tree (BST)",
             "description": "Leverage BST properties (left < root < right) for efficient searching, insertion, deletion, and inorder traversal.\n\nKey property: the result of its inorder traversal is sorted in ascending order"
+         },
+         {
+            "slug": "trie",
+            "name": "Trie (Prefix Tree)",
+            "description": "An n-ary tree where each node represents a character; paths from root to nodes encode words or prefixes. Used for efficient insert, search, and prefix matching over a set of strings"
          }
       ]
    },
